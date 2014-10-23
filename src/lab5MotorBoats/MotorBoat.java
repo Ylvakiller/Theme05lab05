@@ -19,6 +19,12 @@ package lab5MotorBoats;
  * o Test whether one MotorBoat object can drive faster than another (comparing the maximum speed)
  * Write a driver (test) program that demonstrates each of the test method, with at least one true and one false case for each of the methods tested. 
  */
+
+/**
+ * This class will hold the complete assignment from the motorboat assignment
+ * @author Ylva
+ *
+ */
 public class MotorBoat {
 
 }
