@@ -54,11 +54,39 @@ public class MotorBoat {
 	
 	/**
 	 * Constructor that sets the capacity of the fuel tank, all other variables are set to 0
-	 * @param capacity The capacity which you want this motorboat to have
+	 * @param capacity The capacity which this MotorBoat object should have
 	 */
 	public MotorBoat(int capacity){
+		this.capacity = capacity;
+		maxSpeed = 0;
+		currentSpeed = 0;
+	}
+	
+	/**
+	 * Constructor that sets the capacity of the fuel tank to the input.
+	 * And sets the maxSpeed to the input
+	 * @param capacity The capacity which this MotorBoat object should have
+	 * @param maxSpeed The maximum speed which this MotorBoat object should have
+	 */
+	public MotorBoat(int capacity, double maxSpeed){
+		this.capacity = capacity;
+		this.maxSpeed = maxSpeed;
+		currentSpeed = 0;
+	}
+	
+	/**
+	 * Will check if the currentSpeed is not larger as the max speed, otherwise will change the currentSpeed to the maximum speed
+	 * @param capacity
+	 * @param maxSpeed
+	 * @param currentSpeed
+	 */
+	public MotorBoat(int capacity, double maxSpeed, double currentSpeed){
 		
 	}
+	
+	
+	
+	
 	
 	/**
 	 * @return the capacity
