@@ -76,12 +76,17 @@ public class MotorBoat {
 	
 	/**
 	 * Will check if the currentSpeed is not larger as the max speed, otherwise will change the currentSpeed to the maximum speed
-	 * @param capacity
-	 * @param maxSpeed
-	 * @param currentSpeed
+	 * @param capacity The capacity which this MotorBoat object should have
+	 * @param maxSpeed The maximum speed which this MotorBoat object should have
+	 * @param currentSpeed The current speed which this MotorBoat object should have
 	 */
 	public MotorBoat(int capacity, double maxSpeed, double currentSpeed){
-		
+		this.capacity = capacity;
+		this.maxSpeed = maxSpeed;
+		this.currentSpeed = currentSpeed;
+		if(!checkSpeed()){
+			this.currentSpeed = maxSpeed;
+		}
 	}
 	
 	/**
