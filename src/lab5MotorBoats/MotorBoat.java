@@ -43,6 +43,24 @@ public class MotorBoat {
 	public double currentSpeed;
 
 	/**
+	 * Default constructor, sets all variables to 0
+	 * This constructor should only rarely be used
+	 */
+	public MotorBoat(){
+		capacity = 0;
+		maxSpeed = 0;
+		currentSpeed = 0;
+	}
+	
+	/**
+	 * Constructor that sets the capacity of the fuel tank, all other variables are set to 0
+	 * @param capacity The capacity which you want this motorboat to have
+	 */
+	public MotorBoat(int capacity){
+		
+	}
+	
+	/**
 	 * @return the capacity
 	 */
 	public int getCapacity() {
