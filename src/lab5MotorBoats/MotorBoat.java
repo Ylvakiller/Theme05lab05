@@ -84,8 +84,17 @@ public class MotorBoat {
 		
 	}
 	
-	
-	
+	/**
+	 * Checks if the motorboat is not going to go faster then his maximum speed
+	 * @return a true if the speed is correct
+	 */
+	private boolean checkSpeed(){
+		if (maxSpeed>=currentSpeed){
+			return true;
+		}else{
+		return false;
+		}
+	}
 	
 	
 	/**
