@@ -100,6 +100,27 @@ public class MotorBoat {
 		return false;
 		}
 	}
+	
+	/**
+	 * Will check if the maximum speed of the 2 motorboat objects are the same
+	 * @param first The first MototBoat object
+	 * @param second The second MotorBoat object
+	 * @return true if both MotorBoat object have the same maximum speed
+	 */
+	public static boolean testMaxSpeed(MotorBoat first, MotorBoat second){
+		return false;	
+	}
+	
+	/**
+	 * Will compare which motorboat is going faster
+	 * Should be just in conjunction with the testMaxSpeed method
+	 * @param first The first MotorBoat object
+	 * @param second The MotorBoat object to compare to.
+	 * @return true if the first motorboat has an higher speed then the second
+	 */
+	public static boolean getHighestMaxSpeed(MotorBoat first, MotorBoat second){
+		return false;
+	}
 
 	/**
 	 * @return the capacity
