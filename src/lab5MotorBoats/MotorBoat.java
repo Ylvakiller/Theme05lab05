@@ -101,6 +101,7 @@ public class MotorBoat {
 		}
 	}
 	
+	
 	/**
 	 * Will check if the maximum speed of the 2 motorboat objects are the same
 	 * Can be used in conjunction with the compareHighestMaxSpeed method
@@ -144,6 +145,8 @@ public class MotorBoat {
 	public static boolean compareCurrentSpeed(MotorBoat first, MotorBoat second){
 		return false;
 	}
+	
+	
 	/**
 	 * @return the capacity
 	 */
@@ -180,10 +183,21 @@ public class MotorBoat {
 	}
 
 	/**
-	 * @param currentSpeed the currentSpeed to set
+	 * Sets the current speed for this MotorBoat object
+	 * Will fail if the currentSpeed to set it to is higher then the maximum speed
+	 * When it fails it will reset the currentSpeed to its old currentSpeed
+	 * @param currentSpeed the speed to set this MotorBoat to
+	 * @return a true if successfully changed the speed
 	 */
-	public void setCurrentSpeed(double currentSpeed) {
+	public boolean setCurrentSpeed(double currentSpeed) {
+		double temp =  this.currentSpeed;
 		this.currentSpeed = currentSpeed;
+		if(checkSpeed()){
+			return true;
+		}else{
+			this.currentSpeed = temp;
+			return false;
+		}
 	}
 	
 }
