@@ -101,25 +101,4 @@ public class MotorBoat {
 		}
 	}
 	
-	
-	/**
-	 * @return the capacity
-	 */
-	public int getCapacity() {
-		return capacity;
-	}
-
-	/**
-	 * @return the maxSpeed
-	 */
-	public double getMaxSpeed() {
-		return maxSpeed;
-	}
-
-	/**
-	 * @return the currentSpeed
-	 */
-	public double getCurrentSpeed() {
-		return currentSpeed;
-	}
 }
