@@ -100,5 +100,47 @@ public class MotorBoat {
 		return false;
 		}
 	}
+
+	/**
+	 * @return the capacity
+	 */
+	public int getCapacity() {
+		return capacity;
+	}
+
+	/**
+	 * @param capacity the capacity to set
+	 */
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	/**
+	 * @return the maxSpeed
+	 */
+	public double getMaxSpeed() {
+		return maxSpeed;
+	}
+
+	/**
+	 * @param maxSpeed the maxSpeed to set
+	 */
+	public void setMaxSpeed(double maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+
+	/**
+	 * @return the currentSpeed
+	 */
+	public double getCurrentSpeed() {
+		return currentSpeed;
+	}
+
+	/**
+	 * @param currentSpeed the currentSpeed to set
+	 */
+	public void setCurrentSpeed(double currentSpeed) {
+		this.currentSpeed = currentSpeed;
+	}
 	
 }
