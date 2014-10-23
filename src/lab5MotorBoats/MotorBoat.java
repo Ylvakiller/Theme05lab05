@@ -146,6 +146,15 @@ public class MotorBoat {
 		return false;
 	}
 	
+	/**
+	 * Will test if 2 MotorBoat object have the same capacity in their fuel tank
+	 * @param first	the first MotorBoat object to test
+	 * @param second the second MotorBoat object to test
+	 * @return true if the capacities are the same
+	 */
+	public static boolean testCapacity(MotorBoat first, MotorBoat second){
+		return false;
+	}
 	
 	/**
 	 * @return the capacity
