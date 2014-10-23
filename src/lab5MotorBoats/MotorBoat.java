@@ -26,5 +26,19 @@ package lab5MotorBoats;
  *
  */
 public class MotorBoat {
-
+	
+	/**
+	 * The capacity of the fuel tank
+	 */
+	public int capacity;
+	
+	/**
+	 * The maximum speed of this motorboat 
+	 */
+	public double maxSpeed;
+	
+	/**
+	 * The current speed of this motorboat
+	 */
+	public double currentSpeed;
 }
