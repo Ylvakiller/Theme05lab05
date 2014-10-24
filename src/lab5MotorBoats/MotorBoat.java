@@ -177,6 +177,23 @@ public class MotorBoat {
 	}
 	
 	/**
+	 * This method will test if 2 MotoBoat objects are completely the same
+	 * @param first the first MotorBoat object to test
+	 * @param second the second MotorBoat object to test
+	 * @return true if both MotorBoat objects have the same capacity, current speed and maximum speed
+	 */
+	public static boolean equals(MotorBoat first, MotorBoat second){
+		if (MotorBoat.testCapacity(first, second)){
+			if (MotorBoat.testCurrentSpeed(first, second)){
+				if (MotorBoat.testMaxSpeed(first, second)){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	/**
 	 * @return the capacity
 	 */
 	public int getCapacity() {
