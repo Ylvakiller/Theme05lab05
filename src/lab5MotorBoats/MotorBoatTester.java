@@ -87,7 +87,32 @@ public class MotorBoatTester {
 		}else{
 			System.err.println("What they are not the same? Now that is incorrect!");
 		}
+		System.out.println();
+		System.out.println("Now for testing I will set the value of the maximum speed and the value of the currentspeed to be the same for both boats:");
+		second.setMaxSpeed(first.getMaxSpeed());
+		second.setCurrentSpeed(first.getCurrentSpeed());
 		
+		System.out.println("Now the boats have the same values on all fields.");
+		System.out.println("Lets start by comparing the top speeds");
+		
+		if (MotorBoat.testMaxSpeed(first, second)){
+			System.out.println("The maximum speeds are the same");
+		}else{
+			System.err.println("What they are not the same? Now that is incorrect!");
+		}
+		if (MotorBoat.testCurrentSpeed(first, second)){
+			System.out.println("The current speeds are the same");
+		}else{
+			System.err.println("What they are not the same? Now that is incorrect!");
+		}
+		
+		System.out.println();
+		System.out.println("Since we know that all the fields are the same, both boats should be equal to one another right?");
+		if (MotorBoat.equals(first, second)){
+			System.out.println("And as it turns out the program agrees with that");
+		}else{
+			System.err.println("Hmmm they are not the same? That is not right...");
+		}
 		
 	}
 
