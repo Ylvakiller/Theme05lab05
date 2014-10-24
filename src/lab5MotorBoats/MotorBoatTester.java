@@ -42,7 +42,32 @@ public class MotorBoatTester {
 		}
 		System.out.println("The MotorBoat is going: " + first.getCurrentSpeed() + " kmph");
 		System.out.println("Okay so we can in fact change the speed correctely if the new speed is not larger as the maximum speed");
+		System.out.println();
+		System.out.println("But what if we lower the maximum speed to be below the current speed?");
+		System.out.println("Currentely we have:");
+		System.out.println("The maximum speed is: " + first.getMaxSpeed() + " kmph");
+		System.out.println("The MotorBoat is going: " + first.getCurrentSpeed() + " kmph");
+		System.out.println("So if we where to lower the maximum speed to 20 kmph what happens?");
+		first.setMaxSpeed(20);
+		System.out.println("Now we get:");
+		System.out.println("The maximum speed is: " + first.getMaxSpeed() + " kmph");
+		System.out.println("The MotorBoat is going: " + first.getCurrentSpeed() + " kmph");
 		
+		System.out.println("So if we lower the maximum speed below the current speed it will simply max out the boat, but stay in a valid speed.");
+		
+		System.out.println();
+		System.out.println("Now on to something else.");
+		System.out.println("If we where to create a new motorboat, and we would not specify anything, what then would happen?");
+		MotorBoat second  =  new MotorBoat();
+		
+		System.out.println("Curren values:");
+		System.out.println("The capacity is: " + second.getCapacity() + " liters");
+		System.out.println("The maximum speed is: " + second.getMaxSpeed() + " kmph");
+		System.out.println("The MotorBoat is going: " + second.getCurrentSpeed() + " kmph");
+		
+		System.out.println("Hmmm everything is 0... lets try to set a better capacity in this boat, 20 liters will do.");
+		second.setCapacity(20);
+		System.out.println("Now we have " + second.getCapacity() + " liters as our capacity.");
 	}
 
 }
