@@ -208,17 +208,21 @@ public class MotorBoat {
 	}
 
 	/**
-	 * @return the maxSpeed
+	 * @return the maximum speed
 	 */
 	public double getMaxSpeed() {
 		return maxSpeed;
 	}
 
 	/**
-	 * @param maxSpeed the maxSpeed to set
+	 * Sets the maximum speed, if the current speed is larger as the new maximum speed it will change the current speed to the new maximum speed
+	 * @param maxSpeed the maximum speed to set
 	 */
 	public void setMaxSpeed(double maxSpeed) {
 		this.maxSpeed = maxSpeed;
+		if (!checkSpeed()){
+			currentSpeed=maxSpeed;
+		}
 	}
 
 	/**
