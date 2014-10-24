@@ -117,10 +117,10 @@ public class MotorBoatTester {
 		System.out.println();
 		System.out.println("Now the program can tell which boat can go faster then the other.");
 		System.out.println("Since we know that the values are the same we can check what we can get:");
-		if (MotorBoat.compareHighestMaxSpeed(first, second)){
+		if (MotorBoat.compareMaxSpeed(first, second)){
 			System.err.println("Hmmm the first boat can apparentely go faster then the second... wierd.");
 		}else{
-			if (MotorBoat.compareHighestMaxSpeed(second, first)){
+			if (MotorBoat.compareMaxSpeed(second, first)){
 				System.err.println("Wait, the second boat can go faster? This is not right");
 			}else{
 				System.out.println("Neither can go faster as the other, this is what we want.");

@@ -124,7 +124,7 @@ public class MotorBoat {
 	 * @param second The MotorBoat object to compare to.
 	 * @return true if the first motorboat has an higher speed then the second
 	 */
-	public static boolean compareHighestMaxSpeed(MotorBoat first, MotorBoat second){
+	public static boolean compareMaxSpeed(MotorBoat first, MotorBoat second){
 		if (first.getMaxSpeed()>second.getMaxSpeed()){
 			return true;
 		}else{
