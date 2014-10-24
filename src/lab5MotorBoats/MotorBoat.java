@@ -30,17 +30,17 @@ public class MotorBoat {
 	/**
 	 * The capacity of the fuel tank
 	 */
-	public int capacity;
+	private int capacity;
 	
 	/**
 	 * The maximum speed of this motorboat 
 	 */
-	public double maxSpeed;
+	private double maxSpeed;
 	
 	/**
 	 * The current speed of this motorboat
 	 */
-	public double currentSpeed;
+	private double currentSpeed;
 
 	/**
 	 * Default constructor, sets all variables to 0
@@ -110,6 +110,9 @@ public class MotorBoat {
 	 * @return true if both MotorBoat object have the same maximum speed
 	 */
 	public static boolean testMaxSpeed(MotorBoat first, MotorBoat second){
+		if (first.getMaxSpeed()==second.getMaxSpeed()){
+			
+		}
 		return false;	
 	}
 	
