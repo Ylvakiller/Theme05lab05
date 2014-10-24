@@ -97,7 +97,7 @@ public class MotorBoat {
 		if (maxSpeed>=currentSpeed){
 			return true;
 		}else{
-		return false;
+			return false;
 		}
 	}
 	
@@ -111,9 +111,10 @@ public class MotorBoat {
 	 */
 	public static boolean testMaxSpeed(MotorBoat first, MotorBoat second){
 		if (first.getMaxSpeed()==second.getMaxSpeed()){
-			
+			return true;
+		}else{
+			return false;	
 		}
-		return false;	
 	}
 	
 	/**
