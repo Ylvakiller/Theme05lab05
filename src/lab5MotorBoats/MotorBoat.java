@@ -140,7 +140,11 @@ public class MotorBoat {
 	 * @return true if both MotorBoat object have the same maximum speed
 	 */
 	public static boolean testCurrentSpeed(MotorBoat first, MotorBoat second){
-		return false;	
+		if (first.getCurrentSpeed()==second.getCurrentSpeed()){
+			return true;
+		}else{
+			return false;	
+		}
 	}
 	
 	/**
@@ -151,7 +155,11 @@ public class MotorBoat {
 	 * @return true if the first motorboat has an higher speed then the second
 	 */
 	public static boolean compareCurrentSpeed(MotorBoat first, MotorBoat second){
-		return false;
+		if (first.getCurrentSpeed()>second.getCurrentSpeed()){
+			return true;
+		}else{
+			return false;	
+		}
 	}
 	
 	/**
