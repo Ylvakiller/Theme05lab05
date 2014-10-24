@@ -68,6 +68,27 @@ public class MotorBoatTester {
 		System.out.println("Hmmm everything is 0... lets try to set a better capacity in this boat, 20 liters will do.");
 		second.setCapacity(20);
 		System.out.println("Now we have " + second.getCapacity() + " liters as our capacity.");
+		System.out.println("We can now also check if the capacities of these 2 boats are the same.");
+		System.out.println("Our first boat has a capacity of 50, and our second boat has a capacity of 20.");
+		System.out.println("We know that these are not the same, but does the program know?");
+		if (MotorBoat.testCapacity(first, second)){
+			System.err.println("Hmmm it thinks they are the same, that is incorrect");
+		}else{
+			System.out.println("It says that the capacities are not the same, that is correct.");
+		}
+		
+		System.out.println();
+		System.out.println("But what if we would make the capacities the same, what would then happen?");
+		System.out.println("I'll set the capacity of the second boat to the value of the first boat and check again.");
+		second.setCapacity(first.getCapacity());
+		
+		if (MotorBoat.testCapacity(first, second)){
+			System.out.println("Looks like they are the same, nice.");
+		}else{
+			System.err.println("What they are not the same? Now that is incorrect!");
+		}
+		
+		
 	}
 
 }
