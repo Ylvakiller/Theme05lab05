@@ -114,6 +114,29 @@ public class MotorBoatTester {
 			System.err.println("Hmmm they are not the same? That is not right...");
 		}
 		
+		System.out.println();
+		System.out.println("Now the program can tell which boat can go faster then the other.");
+		System.out.println("Since we know that the values are the same we can check what we can get:");
+		if (MotorBoat.compareHighestMaxSpeed(first, second)){
+			System.err.println("Hmmm the first boat can apparentely go faster then the second... wierd.");
+		}else{
+			if (MotorBoat.compareHighestMaxSpeed(second, first)){
+				System.err.println("Wait, the second boat can go faster? This is not right");
+			}else{
+				System.out.println("Neither can go faster as the other, this is what we want.");
+			}
+		}
+		
+		System.out.println("We can do the same for the current speed...");
+		if (MotorBoat.compareCurrentSpeed(first, second)){
+			System.err.println("Hmmm the first boat is apparentely going faster then the second... wierd.");
+		}else{
+			if (MotorBoat.compareCurrentSpeed(second, first)){
+				System.err.println("Wait, the second boat is going faster? This is not right");
+			}else{
+				System.out.println("Neither is going faster as the other, this is what we want.");
+			}
+		}
 	}
 
 }
