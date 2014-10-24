@@ -169,7 +169,11 @@ public class MotorBoat {
 	 * @return true if the capacities are the same
 	 */
 	public static boolean testCapacity(MotorBoat first, MotorBoat second){
-		return false;
+		if (first.getCapacity()==second.getCapacity()){
+			return true;
+		}else{
+			return false;	
+		}
 	}
 	
 	/**
