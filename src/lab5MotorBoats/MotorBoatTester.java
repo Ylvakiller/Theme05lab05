@@ -41,6 +41,7 @@ public class MotorBoatTester {
 			System.err.println("Hmmm so it did not work... something is wrong");
 		}
 		System.out.println("The MotorBoat is going: " + first.getCurrentSpeed() + " kmph");
+		System.out.println("Okay so we can in fact change the speed correctely if the new speed is not larger as the maximum speed");
 		
 	}
 
