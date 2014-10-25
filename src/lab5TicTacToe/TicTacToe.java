@@ -285,9 +285,14 @@ public class TicTacToe {
 	
 	/**
 	 * Retrieves the winner, should only be run when endGame() is true
+	 * @return an 'A' if draw, otherwise an 'X' or 'O'
 	 */
-	public void GetWinner(){
-		
+	public char GetWinner(){
+		if(draw()){
+			return 'A';
+		}else{
+			return turn();
+		}
 	}
 	
 	/**
