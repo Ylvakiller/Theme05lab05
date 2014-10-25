@@ -47,6 +47,7 @@ public class TicTacToe {
 	
 	/**
 	 * Constructor that initializes the board on a specific size
+	 * Sets the starting player to X
 	 * @param size the size the board should have
 	 */
 	public TicTacToe(byte size){
@@ -65,6 +66,7 @@ public class TicTacToe {
 	
 	/**
 	 * Constructor that specifies which user starts
+	 * Sets the board size to 4
 	 * @param start has to be either 'X' or 'O'
 	 */
 	public TicTacToe(char start){
