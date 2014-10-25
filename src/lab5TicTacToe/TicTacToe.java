@@ -310,6 +310,15 @@ public class TicTacToe {
 		}
 	}
 	
+	/**
+	 * Will return a small array with 2 integer types in it
+	 * These are the coordinates of the place where the user wants to place a sign
+	 * @return a small int array with 2 coordinates
+	 */
+	public int[] getTurn(){
+		int[] temp = new int[2];
+		return temp;
+	}
 	
 	
 	
