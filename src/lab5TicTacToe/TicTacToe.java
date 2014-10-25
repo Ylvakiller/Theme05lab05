@@ -225,6 +225,30 @@ public class TicTacToe {
 		return true;
 	}
 	
+	/**
+	 * Will win if the player who's turn it is has a winning condition in diagonal from the bottom left to the top right
+	 * @return true if the current player has won with this diagonal
+	 */
+	private boolean rightDiagonalWin(){
+		int i = 0;
+		while(i<gameSize){
+			if(turn()=='X'){
+				if(game[gameSize-i][i]=='O'){
+					//In this case, it is X his turn and in the diagonal that we check there is a O, meaning that X cannot win with that diagonal
+					return false;
+				}
+			}
+			if(turn()=='O'){
+				if(game[gameSize-i][i]=='X'){
+					//In this case, it is O his turn and in the diagonal that we check there is a X, meaning that O cannot win with that diagonal
+					return false;
+				}
+			}
+			i++;
+		}
+		//If it gets here without return a false we know that we have a true case
+		return true;
+	}
 	
 	/**
 	 * I ran into problems with the way I initialized the game array,
