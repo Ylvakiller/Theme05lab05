@@ -30,7 +30,7 @@ public class TicTacToe {
 	 * Default constructor,
 	 * Sets the size of the game to 4
 	 * The starting player to X
-	 * And initialises the game array as being filled with 'A'
+	 * And initializes the game array as being filled with 'A'
 	 */
 	public TicTacToe(){
 		gameSize = 4;
