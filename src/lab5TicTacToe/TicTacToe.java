@@ -23,8 +23,13 @@ public class TicTacToe {
 	
 	/**
 	 * The size of the board
+	 * We could use a byte type to save memory here, and if we would do that we could make the moveCount a short.
+	 * However due to the way java works on 32 bit systems (And most systems have either a 32 or 64 bit architecture) it will allocate the room for an int type anyway.
+	 * This means the Java Virtual Machine has to do additional checks in order to do arithmetic on short and byte types.
+	 * This actually results in a penalty in terms of actual computing time.
+	 * More on this subject can be found at http://stackoverflow.com/questions/14531235/in-java-is-it-more-efficient-to-use-byte-or-short-instead-of-int-and-float-inst
 	 */
-	private byte gameSize;
+	private int gameSize;
 	
 	/**
 	 * Default constructor,
