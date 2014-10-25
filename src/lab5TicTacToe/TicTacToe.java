@@ -133,6 +133,17 @@ public class TicTacToe {
 	 * @return true if the game has ended
 	 */
 	private boolean endGame(){
+		if (fullField()||leftDiagonalWin()||rightDiagonalWin()){
+			return true;
+		}else{
+			int i = 0;
+			while (i<gameSize){
+				if (columnWin(i)||rowWin(i)){
+					return true;
+				}
+				i++;
+			}
+		}
 		return false;
 	}
 	
