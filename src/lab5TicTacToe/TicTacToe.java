@@ -24,7 +24,7 @@ public class TicTacToe {
 	/**
 	 * The size of the board
 	 */
-	private int gameSize;
+	private byte gameSize;
 	
 	/**
 	 * Default constructor,
@@ -40,6 +40,14 @@ public class TicTacToe {
 		starter = 'X';
 	}
 	
+	public TicTacToe(byte size){
+		if (size<=2){
+			//Invalid size
+			System.err.println("Invalid board size, stopping the program");
+			System.err.println("Error code 1, invalid board size");
+			System.exit(1);
+		}
+	}
 	/**
 	 * I ran into problems with the way I initialized the game array,
 	 * Since the array size is usually really small we can just use a simple loop iteration to make the array hold values of 'A'

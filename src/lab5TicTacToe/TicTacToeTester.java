@@ -49,7 +49,7 @@ package lab5TicTacToe;
  * Personal remarks:
  * I decided to not use the methods posted on blackboard but to make my own based upon them. 
  * They will be integrated in the TicTacToe class but will be documented in a way that makes clear that they are based upon the blackboard code.
- * In other remarks, the program will work for any size larger then 2 for a board size, I will make a line of code that can be uncommented to set the limit to a 7x7 grid
+ * In other remarks, the program will work for any board size from 3 till 127, I will make a line of code that can be uncommented to set the limit to a 7x7 grid
  * The assignment is highly unclear about how the user input should be gotten, I therefore decided to get the user input by asking for a row and a column number.
  */
 
