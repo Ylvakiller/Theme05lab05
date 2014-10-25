@@ -126,9 +126,53 @@ public class TicTacToe {
 				return 'X';
 			}
 		}
-		
 	}
 	
+	/**
+	 * This method will check if the game has ended
+	 * @return true if the game has ended
+	 */
+	private boolean endGame(){
+		return false;
+	}
+	
+	/**
+	 * Will return true if the field is full
+	 * @return true if all the places on the field have something in them
+	 */
+	private boolean fullField(){
+		if (moveCount+1==Math.pow(gameSize, 2)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * Will win if the player who's turn it is has a winning condition in the specified column
+	 * @param column the column to check
+	 * @return true if the current player has won with this column
+	 */
+	private boolean columnWin(int column){
+		int i = 0;
+		while(i<gameSize){
+			if(turn()=='X'){
+				if(game[column][i]=='O'){
+					//In this case, it is X his turn and in the column that we check there is a O, meaning that X cannot win with that column
+					return false;
+				}
+			}
+			if(turn()=='O'){
+				if(game[column][i]=='X'){
+					//In this case, it is O his turn and in the column that we check there is a X, meaning that O cannot win with that column
+					return false;
+				}
+			}
+			i++;
+		}
+		//If it gets here without return a false we know that we have a true case
+		return true;
+	}
 	/**
 	 * I ran into problems with the way I initialized the game array,
 	 * Since the array size is usually really small we can just use a simple loop iteration to make the array hold values of 'A'
