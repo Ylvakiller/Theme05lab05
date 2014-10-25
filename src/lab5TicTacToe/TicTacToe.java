@@ -110,7 +110,24 @@ public class TicTacToe {
 		}
 	}
 	
-	
+	/**
+	 * returns who's turn it is
+	 * @return the char of the player who's turn it is
+	 */
+	public char turn(){
+		//Bitmasking, we are now only looking at the least significant bit, if that is 0 then it is even, if it is 1 then it is odd
+		if ((moveCount&1)==0){
+			return starter;
+		}else{
+			//odd number, now we need to switch the starter
+			if (starter=='X'){
+				return 'O';
+			}else{
+				return 'X';
+			}
+		}
+		
+	}
 	
 	/**
 	 * I ran into problems with the way I initialized the game array,
