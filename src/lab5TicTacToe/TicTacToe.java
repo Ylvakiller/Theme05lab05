@@ -63,7 +63,24 @@ public class TicTacToe {
 		starter = 'X';
 	}
 	
-	
+	/**
+	 * Constructor that specifies which user starts
+	 * @param start has to be either 'X' or 'O'
+	 */
+	public TicTacToe(char start){
+		if(start=='X'||start=='O'){
+			gameSize = 4;
+			game = new char[gameSize][gameSize];
+			emptyGame();
+			moveCount = 0;
+			starter = start;
+		}else{
+			//Invalid starting character
+			System.err.println("Invalid character as start player");
+			System.err.println("Error code 2, invalid starting character");
+			System.exit(2);
+		}
+	}
 	
 	/**
 	 * I ran into problems with the way I initialized the game array,
