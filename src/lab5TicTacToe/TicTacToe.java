@@ -85,6 +85,34 @@ public class TicTacToe {
 	}
 	
 	/**
+	 * Constructor that can set the starting user and the board size
+	 * @param size the board size, has to be higher then 2
+	 * @param start the starting char, has to be either 'X' or 'O'
+	 */
+	public TicTacToe(int size, char start){
+		if(start=='X'||start=='O'){
+			if (size<=2){
+				//Invalid size
+				System.err.println("Invalid board size, stopping the program");
+				System.err.println("Error code 1, invalid board size");
+				System.exit(1);
+			}
+			gameSize = size;
+			game = new char[gameSize][gameSize];
+			emptyGame();
+			moveCount = 0;
+			starter = start;
+		}else{
+			//Invalid starting character
+			System.err.println("Invalid character as start player");
+			System.err.println("Error code 2, invalid starting character");
+			System.exit(2);
+		}
+	}
+	
+	
+	
+	/**
 	 * I ran into problems with the way I initialized the game array,
 	 * Since the array size is usually really small we can just use a simple loop iteration to make the array hold values of 'A'
 	 */
