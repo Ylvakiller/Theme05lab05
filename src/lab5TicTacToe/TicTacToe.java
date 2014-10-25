@@ -148,6 +148,28 @@ public class TicTacToe {
 	}
 	
 	/**
+	 * Will return a true if the game has gone into a draw
+	 * @return true if the game is a draw
+	 */
+	private boolean draw(){
+		if(fullField()){
+			if (leftDiagonalWin()||rightDiagonalWin()){
+				return false;
+			}else{
+				int i = 0;
+				while (i<gameSize){
+					if (columnWin(i)||rowWin(i)){
+						return false;
+					}
+					i++;
+				}
+			}
+			return true;
+		}else{
+			return false;
+		}
+	}
+	/**
 	 * Will return true if the field is full
 	 * @return true if all the places on the field have something in them
 	 */
@@ -259,6 +281,13 @@ public class TicTacToe {
 		}
 		//If it gets here without return a false we know that we have a true case
 		return true;
+	}
+	
+	/**
+	 * Retrieves the winner, should only be run when endGame() is true
+	 */
+	public void GetWinner(){
+		
 	}
 	
 	/**
