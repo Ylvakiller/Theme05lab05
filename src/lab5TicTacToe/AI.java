@@ -99,6 +99,31 @@ public class AI extends TicTacToe{
 		//step 8, try to place your character on an empty side place
 		
 		//Step 1:
+		int i = 0;
+		int coordWin[] = {0,0};
+		boolean winFound = false;
+		while(i<gameSize){
+			if(columnWinPossible(i,computer)){
+				coordWin[0] = findWinColumn(i);
+				coordWin[1] = i;
+				winFound = true;
+			}else if (rowWinPossible(i,computer)){
+				coordWin[0] = i;
+				coordWin[i] = findWinRow(i);
+				winFound = true;
+			}
+			i++;
+		}
+		if (!winFound){
+			if (leftDiagonalWinPossible(computer)){
+				coordWin[0] = findWinLeftDiagonal();
+				coordWin[1] = findWinLeftDiagonal();
+				winFound = true;
+			}else if (rightDiagonalWinPossible(computer)){
+				
+			}
+		}
+		
 	}
 	
 	/**
@@ -313,7 +338,7 @@ public class AI extends TicTacToe{
 	
 	/**
 	 * Checks for the first empty place in the diagonal from top right to bottom left
-	 * if this is 0 it means 3,1 if it is 1 then it is 2,2 if it is 3 it is 1,3
+	 * If this is 0 it means 3,1 if it is 1 then it is 2,2 if it is 3 it is 1,3 these values are not the array values
 	 * @return the integer location of the first empty place in this diagonal
 	 */
 	private int findWinRightDiagonal(){
