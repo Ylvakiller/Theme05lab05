@@ -223,14 +223,31 @@ public class AI extends TicTacToe{
 	/**
 	 * Will find the place where the player can win, will return 4 if no place is found.
 	 * Should be used after the rowWingPossible method
+	 * Will check for the first open space and return that
 	 * @param row the row to check
-	 * @param player the char to check for
 	 * @return an integer with the column where the player has a spot to win (if any)
 	 */
-	private int findWinRow(int row, char player){
+	private int findWinRow(int row){
 		int i = 0;
 		while(i<3){
 			if (game[i][row]=='A'){
+				return i;
+			}
+			i++;
+		}
+		return 4;
+	}
+	
+	/**
+	 * Will find the first empty place in a column and return that, will return a 4 otherwise
+	 * Should be used after the columnWinPossible method
+	 * @param column the column to check
+	 * @return an integer with the row where the first empty place is (which if columnWinPossible returns true will be the place where a win is possible)
+	 */
+	private int findWinColumn(int column){
+		int i = 0;
+		while(i<3){
+			if (game[column][i]=='A'){
 				return i;
 			}
 			i++;
