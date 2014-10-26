@@ -424,6 +424,7 @@ public class TicTacToe {
 					System.out.println("The game has ended in a draw.");
 				}else{
 					System.out.println("The player playing with " + getWinner() + " has won this game");
+					System.exit(0);
 				}
 			}
 			moveCount++;
