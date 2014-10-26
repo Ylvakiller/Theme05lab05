@@ -221,6 +221,24 @@ public class AI extends TicTacToe{
 	}
 	
 	/**
+	 * Will find the place where the player can win, will return 4 if no place is found.
+	 * Should be used after the rowWingPossible method
+	 * @param row the row to check
+	 * @param player the char to check for
+	 * @return an integer with the column where the player has a spot to win (if any)
+	 */
+	private int findWinRow(int row, char player){
+		int i = 0;
+		while(i<3){
+			if (game[i][row]=='A'){
+				return i;
+			}
+			i++;
+		}
+		return 4;
+	}
+	
+	/**
 	 * Will check if it is possible for any player to win in the diagonal from top left to bottom right
 	 * @param player the char to check for
 	 * @return true if the char can win in one move
