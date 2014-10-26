@@ -104,12 +104,12 @@ public class AI extends TicTacToe{
 		boolean winFound = false;
 		while(i<gameSize){
 			if(columnWinPossible(i,computer)){
-				coordWin[0] = findWinColumn(i);
-				coordWin[1] = i;
+				coordWin[0] = i;
+				coordWin[1] = findWinColumn(i);
 				winFound = true;
 			}else if (rowWinPossible(i,computer)){
-				coordWin[0] = i;
-				coordWin[i] = findWinRow(i);
+				coordWin[0] = findWinRow(i);
+				coordWin[1] = i;
 				winFound = true;
 			}
 			i++;
@@ -120,8 +120,8 @@ public class AI extends TicTacToe{
 				coordWin[1] = findWinLeftDiagonal();
 				winFound = true;
 			}else if (rightDiagonalWinPossible(computer)){
-				coordWin[0] = 2-findWinRightDiagonal();
-				coordWin[1] = findWinRightDiagonal();
+				coordWin[0] = findWinRightDiagonal();
+				coordWin[1] = 2-findWinRightDiagonal();
 				winFound = true;
 			}
 		}
