@@ -448,6 +448,12 @@ public class AI extends TicTacToe{
 				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[2][1]=='A'){
 					return true;
 				}
+			}else if (game[1][1]==computer){
+				if (game[2][1]=='A'&&game[2][0]=='A'&&game[0][1]=='A'){
+					return true;
+				}else if (game[1][2]=='A'&&game[0][2]=='A'&&game[1][0]=='A'){
+					return true;
+				}
 			}
 		}else if (game[0][2]==computer){
 			if (game[2][0]==computer){
@@ -456,12 +462,24 @@ public class AI extends TicTacToe{
 				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
 					return true;
 				}
+			}else if(game[1][1]==computer){
+				if (game[0][1]=='A'&&game[0][0]=='A'&&game[2][1]=='A'){
+					return true;
+				}else if (game[1][2]=='A'&&game[1][0]=='A'&&game[2][2]=='A'){
+					return true;
+				}
 			}
 		}else if (game[2][0]==computer){
 			if (game[0][2]==computer){
 				if (game[0][1]=='A'&&game[0][0]=='A'&&game[1][0]=='A'){
 					return true;
 				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
+					return true;
+				}
+			}else if(game[1][1]==computer){
+				if (game[1][0]=='A'&&game[0][0]=='A'&&game[1][2]=='A'){
+					return true;
+				}else if (game[0][1]=='A'&&game[2][1]=='A'&&game[2][2]=='A'){
 					return true;
 				}
 			}
