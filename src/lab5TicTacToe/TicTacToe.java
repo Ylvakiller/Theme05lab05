@@ -286,7 +286,7 @@ public class TicTacToe {
 				}
 			}
 			if(turn()=='O'){
-				if(game[gameSize-i][i]=='X'||game[gameSize-i][i]=='A'){
+				if(game[gameSize-i-1][i]=='X'||game[gameSize-i-1][i]=='A'){
 					//In this case, it is O his turn and in the diagonal that we check there is a X, meaning that O cannot win with that diagonal
 					//Also if there is an A to be found then that place does not have a sign on it, meaning no win can be gotten here
 					return false;
