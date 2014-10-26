@@ -63,4 +63,11 @@ public class AI extends TicTacToe{
 			return false;
 		}
 	}
+	
+	/**
+	 * This calculates and enters the best move possible
+	 */
+	private void doBestMove(){
+		
+	}
 }
