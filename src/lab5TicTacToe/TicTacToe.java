@@ -356,6 +356,22 @@ public class TicTacToe {
 		}
 	}
 	
+	/**
+	 * This is a place holder method that will print the current playing field
+	 */
+	private void placeHolderPrint(){
+		int x = 0, y = 0;
+		while(x<gameSize){
+			while(y<gameSize){
+				System.out.print(game[x][y]);
+				y++;
+			}
+			x++;
+			System.out.println();
+		}
+		
+	}
+	
 	
 	
 }
