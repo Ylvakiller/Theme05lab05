@@ -409,6 +409,18 @@ public class AI extends TicTacToe{
 		game[row][column] = computer;
 	}
 	
+	/**
+	 * Will check if a fork is possible this method is horribly inefficient but it will do for now
+	 * @param player The char to check if it has a possible place for a fork
+	 * @return true if there is a place for a fork
+	 */
+	private boolean forkPossible(char player){
+		
+		return false;
+	}
+	
+	
+	
 	
 	
 }
