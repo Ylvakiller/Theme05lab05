@@ -66,6 +66,15 @@ public class TicTacToeTester {
 		System.out.println("I just created a default game, this starts with an empty 4x4 grid with the player X starting.");
 		System.out.println("Now Let us check which user its turn it is:");
 		System.out.println(game1.turn());
+		System.out.println("Okay so that works");
+		System.out.println("Now let us try to start a new game, also 4x4 but let the player with O start...");
+		TicTacToe game2 = new TicTacToe('O');
+		System.out.println("And what happens if we now print who's turn it is?");
+		System.out.println(game2.turn());
+		System.out.println("So that works aswell");
+		System.out.println("Now there are 2 more tests that need to be done, these will be tested in the gameLoop");
+		System.out.println();
+		System.out.println("Starting game loop");
 		game1.gameLoop();
 		
 	}
