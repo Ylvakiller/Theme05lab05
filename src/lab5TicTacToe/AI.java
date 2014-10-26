@@ -89,4 +89,56 @@ public class AI extends TicTacToe{
 	private void doBestMove(){
 		
 	}
+	
+	/**
+	 * Will check if it is possible to win for a specific character, and if so which place should be filled for that player to win
+	 * @param player the char which to test, this can be either X or O depending on if you want to check for the computer of the player
+	 * @return	Coordinates of the place where the player can win, if this is 4,4 then there is no possible win
+	 */
+	private int[][] possibleWin(char player){
+		int[] winPosition = {4};
+		
+		return null;
+	}
+	
+	/**
+	 * This method will check if it is possible for the character specified by player to win in the specific column
+	 * @param column the column to check
+	 * @param player the char to check for
+	 * @return true if the specified char can with just one move win the game
+	 */
+	private boolean columnWinPossible(int column, char player){
+		int i = 0;
+		int countEmpty =0;
+		int countNonPlayer = 0;
+		while(i<gameSize){
+			if(player=='X'){
+				if(game[column][i]=='A'){
+					countEmpty++;
+				}
+				if(game[column][i]=='O'){
+					countNonPlayer++;
+				}
+				
+			}
+			if(player=='O'){
+				if(game[column][i]=='A'){
+					countEmpty++;
+				}
+				if(game[column][i]=='X'){
+					countNonPlayer++;
+				}
+				
+			}
+			i++;
+		}
+		
+		//Now if countEmpty will be 1, then we know that there is only 1 place on a row that is not the player char
+		//If countNonPlayer is larger then 0 we can already see that is is impossible to have a win on this row
+		if(countNonPlayer==0&&countEmpty==1){
+			return true;
+		}
+		return false;
+	}
+	
 }
