@@ -141,4 +141,44 @@ public class AI extends TicTacToe{
 		return false;
 	}
 	
+	/**
+	 * Will check if it possible for any player to win in a specified row
+	 * @param row the row to check
+	 * @param player the char to check for
+	 * @return true if the specified char can win with just one move
+	 */
+	private boolean rowWinPossible(int row, char player){
+		int i = 0;
+		int countEmpty =0;
+		int countNonPlayer = 0;
+		while(i<gameSize){
+			if(player=='X'){
+				if(game[i][row]=='A'){
+					countEmpty++;
+				}
+				if(game[i][row]=='O'){
+					countNonPlayer++;
+				}
+				
+			}
+			if(player=='O'){
+				if(game[i][row]=='A'){
+					countEmpty++;
+				}
+				if(game[i][row]=='X'){
+					countNonPlayer++;
+				}
+				
+			}
+			i++;
+		}
+		
+		//Now if countEmpty will be 1, then we know that there is only 1 place on a row that is not the player char
+		//If countNonPlayer is larger then 0 we can already see that is is impossible to have a win on this row
+		if(countNonPlayer==0&&countEmpty==1){
+			return true;
+		}
+		return false;
+	}
+	
 }
