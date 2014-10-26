@@ -294,7 +294,22 @@ public class AI extends TicTacToe{
 		return 4;
 	}
 	
-	
+	/**
+	 * Will return an integer that has the first empty place in the diagonal from top left to bottom right.
+	 * If this integer = 0  then the place is 0,0 in the game array, if 1 then it is 1,1 etc
+	 * Should be used if the leftDiagonalWinPossible is true
+	 * @return the first empty the place in the diagonal
+	 */
+	private int findWinLeftDiagonal(){
+		int i =0;
+		while(i<3){
+			if (game[i][i]=='A'){
+				return i;
+			}
+			i++;
+		}
+		return 4;
+	}
 	
 	
 }
