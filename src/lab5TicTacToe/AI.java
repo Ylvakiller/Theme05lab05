@@ -102,17 +102,6 @@ public class AI extends TicTacToe{
 	}
 	
 	/**
-	 * Will check if it is possible to win for a specific character, and if so which place should be filled for that player to win
-	 * @param player the char which to test, this can be either X or O depending on if you want to check for the computer of the player
-	 * @return	Coordinates of the place where the player can win, if this is 4,4 then there is no possible win
-	 */
-	private int[][] possibleWin(char player){
-		int[] winPosition = {4};
-		
-		return null;
-	}
-	
-	/**
 	 * This method will check if it is possible for the character specified by player to win in the specific column
 	 * @param column the column to check
 	 * @param player the char to check for
