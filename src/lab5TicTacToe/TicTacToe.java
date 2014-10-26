@@ -416,7 +416,7 @@ public class TicTacToe {
 	 */
 	public void gameLoop(){
 		while (true){
-			placeHolderPrint();
+			printScreen();
 			int[] temp = getMove();
 			placeSign(temp[0],temp[1]);
 			if(endGame()){
@@ -443,6 +443,33 @@ public class TicTacToe {
 	}
 	
 	
-	
+	/**
+	 * The proper graphical screen
+	 */
+	private void printScreen(){
+		int temp = 0;
+		while(temp<gameSize){
+			System.out.print("____");
+			temp++;
+		}
+		System.out.println("");
+		int x = 0, y = 0;
+		while(x<gameSize){
+			System.out.print("| ");
+			while(y<gameSize){
+				System.out.print(game[x][y] +" | ");
+				y++;
+			}
+			y=0;
+			x++;
+			System.out.println("");
+			temp = 0;
+			while(temp<gameSize){
+				System.out.print("|___");
+				temp++;
+			}
+			System.out.println("|");
+		}
+	}
 	
 }
