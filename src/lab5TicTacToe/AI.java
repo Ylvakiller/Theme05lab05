@@ -134,30 +134,30 @@ public class AI extends TicTacToe{
 	}
 	
 	/**
-	 * This method will check if it is possible for the character specified by player to win in the specific column
-	 * @param column the column to check
+	 * This method will check if it is possible for the character specified by player to win in the specific row
+	 * @param row the row to check
 	 * @param player the char to check for
 	 * @return true if the specified char can with just one move win the game
 	 */
-	private boolean columnWinPossible(int column, char player){
+	private boolean rowWinPossible(int row, char player){
 		int i = 0;
 		int countEmpty =0;
 		int countNonPlayer = 0;
 		while(i<gameSize){
 			if(player=='X'){
-				if(game[column][i]=='A'){
+				if(game[row][i]=='A'){
 					countEmpty++;
 				}
-				if(game[column][i]=='O'){
+				if(game[row][i]=='O'){
 					countNonPlayer++;
 				}
 				
 			}
 			if(player=='O'){
-				if(game[column][i]=='A'){
+				if(game[row][i]=='A'){
 					countEmpty++;
 				}
-				if(game[column][i]=='X'){
+				if(game[row][i]=='X'){
 					countNonPlayer++;
 				}
 				
@@ -174,30 +174,30 @@ public class AI extends TicTacToe{
 	}
 	
 	/**
-	 * Will check if it possible for any player to win in a specified row
-	 * @param row the row to check
+	 * Will check if it possible for any player to win in a specified column
+	 * @param column the column to check
 	 * @param player the char to check for
 	 * @return true if the specified char can win with just one move
 	 */
-	private boolean rowWinPossible(int row, char player){
+	private boolean columnWinPossible(int column, char player){
 		int i = 0;
 		int countEmpty =0;
 		int countNonPlayer = 0;
 		while(i<gameSize){
 			if(player=='X'){
-				if(game[i][row]=='A'){
+				if(game[i][column]=='A'){
 					countEmpty++;
 				}
-				if(game[i][row]=='O'){
+				if(game[i][column]=='O'){
 					countNonPlayer++;
 				}
 				
 			}
 			if(player=='O'){
-				if(game[i][row]=='A'){
+				if(game[i][column]=='A'){
 					countEmpty++;
 				}
-				if(game[i][row]=='X'){
+				if(game[i][column]=='X'){
 					countNonPlayer++;
 				}
 				
@@ -291,6 +291,7 @@ public class AI extends TicTacToe{
 		return false;
 	}
 	
+	
 	/**
 	 * Will find the place where the player can win, will return 4 if no place is found.
 	 * Should be used after the rowWingPossible method
@@ -301,13 +302,14 @@ public class AI extends TicTacToe{
 	private int findWinRow(int row){
 		int i = 0;
 		while(i<3){
-			if (game[i][row]=='A'){
+			if (game[row][i]=='A'){
 				return i;
 			}
 			i++;
 		}
 		return 4;
 	}
+	
 	
 	/**
 	 * Will find the first empty place in a column and return that, will return a 4 otherwise
@@ -318,7 +320,7 @@ public class AI extends TicTacToe{
 	private int findWinColumn(int column){
 		int i = 0;
 		while(i<3){
-			if (game[column][i]=='A'){
+			if (game[i][column]=='A'){
 				return i;
 			}
 			i++;
