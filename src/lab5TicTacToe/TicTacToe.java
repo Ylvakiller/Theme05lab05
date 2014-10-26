@@ -139,7 +139,7 @@ public class TicTacToe {
 	 * This method will check if the game has ended
 	 * @return true if the game has ended
 	 */
-	private boolean endGame(){
+	protected boolean endGame(){
 		if (fullField()||leftDiagonalWin()||rightDiagonalWin()){
 			return true;
 		}else{

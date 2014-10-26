@@ -49,7 +49,26 @@ public class AI extends TicTacToe{
 	 */
 	@Override
 	public void gameLoop(){
-		
+		while (true){
+			printScreen();
+			if (isAITurn()){
+				doBestMove();
+			}else{
+				int[] temp = getMove();
+				placeSign(temp[0],temp[1]);
+			}
+			
+			if(endGame()){
+				if (getWinner()=='A'){
+					System.out.println("The game has ended in a draw.");
+				}else if (getWinner()==computer){
+					System.out.println("The computer has won.");
+				}else{
+					System.out.println("You have beaten the computer");
+				}
+			}
+			moveCount++;
+		}
 	}
 	
 	/**
