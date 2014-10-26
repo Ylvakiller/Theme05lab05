@@ -311,5 +311,24 @@ public class AI extends TicTacToe{
 		return 4;
 	}
 	
+	/**
+	 * Checks for the first empty place in the diagonal from top right to bottom left
+	 * if this is 0 it means 3,1 if it is 1 then it is 2,2 if it is 3 it is 1,3
+	 * @return the integer location of the first empty place in this diagonal
+	 */
+	private int findWinRightDiagonal(){
+		int i =0;
+		while(i<3){
+			if (game[gameSize-i-1][i]=='A'){
+				return i;
+			}
+			i++;
+		}
+		return 4;
+	}
+	
+	
+	
+	
 	
 }
