@@ -121,7 +121,7 @@ public class TicTacToe {
 	 * returns who's turn it is
 	 * @return the char of the player who's turn it is
 	 */
-	private char turn(){
+	public char turn(){
 		//Bitmasking, we are now only looking at the least significant bit, if that is 0 then it is even, if it is 1 then it is odd
 		if ((moveCount&1)==0){
 			return starter;
