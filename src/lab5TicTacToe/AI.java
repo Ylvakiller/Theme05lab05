@@ -18,5 +18,8 @@ public class AI extends TicTacToe{
 		gameSize = 3;
 		game = new char[gameSize][gameSize];
 		emptyGame();
+		moveCount = 0;
+		starter = 'X';
+		computer = 'O';
 	}
 }
