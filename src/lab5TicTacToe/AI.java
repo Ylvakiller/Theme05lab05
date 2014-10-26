@@ -427,6 +427,106 @@ public class AI extends TicTacToe{
 		 * Also when calculating forks we can assume that cases where a win is already possible the program will have taken that win already and that condition cannot be part of the fork
 		 */
 		
+		if(game[0][0]==player){
+			if (game[2][2]==player){
+				if (game[0][1]=='A'&&game[0][2]=='A'&&game[1][2]=='A'){
+					return true;
+				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[2][1]=='A'){
+					return true;
+				}
+			}else if (game[1][1]==player){
+				if (game[0][1]=='A'&&game[0][2]=='A'&&game[2][1]=='A'){
+					return true;
+				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[1][2]=='A'){
+					return true;
+				}
+			}
+		}else if (game[2][2]==player){
+			if (game[0][0]==player){
+				if (game[0][1]=='A'&&game[0][2]=='A'&&game[1][2]=='A'){
+					return true;
+				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[2][1]=='A'){
+					return true;
+				}
+			}else if (game[1][1]==player){
+				if (game[2][1]=='A'&&game[2][0]=='A'&&game[0][1]=='A'){
+					return true;
+				}else if (game[1][2]=='A'&&game[0][2]=='A'&&game[1][0]=='A'){
+					return true;
+				}
+			}
+		}else if (game[0][2]==player){
+			if (game[2][0]==player){
+				if (game[0][1]=='A'&&game[0][0]=='A'&&game[1][0]=='A'){
+					return true;
+				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
+					return true;
+				}
+			}else if(game[1][1]==player){
+				if (game[0][1]=='A'&&game[0][0]=='A'&&game[2][1]=='A'){
+					return true;
+				}else if (game[1][2]=='A'&&game[1][0]=='A'&&game[2][2]=='A'){
+					return true;
+				}
+			}
+		}else if (game[2][0]==player){
+			if (game[0][2]==player){
+				if (game[0][1]=='A'&&game[0][0]=='A'&&game[1][0]=='A'){
+					return true;
+				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
+					return true;
+				}
+			}else if(game[1][1]==player){
+				if (game[1][0]=='A'&&game[0][0]=='A'&&game[1][2]=='A'){
+					return true;
+				}else if (game[0][1]=='A'&&game[2][1]=='A'&&game[2][2]=='A'){
+					return true;
+				}
+			}
+		}else if (game[1][1]==player){
+			if (game[0][1]==player){
+				if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][2]=='A'){
+					return true;
+				}else if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}
+			}else if (game[1][2]==player){
+				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
+					return true;
+				}
+			}else if (game[2][1]==player){
+				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
+					return true;
+				}
+			}else if (game[1][0]==player){
+				if (game[0][0]=='A'&&game[2][0]=='A'&&game[2][2]=='A'){
+					return true;
+				}else if (game[0][0]=='A'&&game[2][0]=='A'&&game[0][2]=='A'){
+					return true;
+				}
+			}
+		}
+		//If none of all the possible cases above are true then there is no possibility for a fork and therefore this can return false;
+		return false;
+	}
+	
+	private boolean FindForkPlace(char player){
+		/*
+		 * This method is not efficient!
+		 * It will check every single corner fork
+		 * There are a lot of different combinations for this to happen, I have been looking for a more efficient method to do this, however time limitations force me to use this brute force method
+		 * I do not need to check if there is a possibility for a fork which needs to place a char in the middle position.
+		 * This because if you look closely at the algorithm, if the computer starts it will put his char in the middle
+		 * If the player starts then either that player will put his char in the middle, or he will put it somewhere else which will result in the computer placing a char in the middle
+		 * This means that since a fork needs a minimum of 2 chars for the computer it is impossible to create a fork by placing a char in the middle
+		 * It is however quite possible to create a fork when the computer is already in the middle
+		 * Also when calculating forks we can assume that cases where a win is already possible the program will have taken that win already and that condition cannot be part of the fork
+		 */
+		
 		if(game[0][0]==computer){
 			if (game[2][2]==computer){
 				if (game[0][1]=='A'&&game[0][2]=='A'&&game[1][2]=='A'){
