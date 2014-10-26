@@ -43,4 +43,12 @@ public class AI extends TicTacToe{
 			System.exit(1);
 		}
 	}
+	
+	/**
+	 * This will be the AI game loop. it will Override the game loop in the TicTacToe class
+	 */
+	@Override
+	public void gameLoop(){
+		
+	}
 }
