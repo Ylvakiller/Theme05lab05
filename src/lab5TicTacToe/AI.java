@@ -166,6 +166,12 @@ public class AI extends TicTacToe{
 				enterMove(coordWin[0],coordWin[1]);
 			}else{
 				//This is where step 3 should be
+				if (forkPossible(computer)){
+					int temp[] = findForkPlace(computer);
+					enterMove(temp[0],temp[1]);
+				}else{
+					//This is step 4
+				}
 			}
 			
 		}
@@ -514,104 +520,151 @@ public class AI extends TicTacToe{
 		return false;
 	}
 	
-	private boolean FindForkPlace(char player){
-		/*
-		 * This method is not efficient!
-		 * It will check every single corner fork
-		 * There are a lot of different combinations for this to happen, I have been looking for a more efficient method to do this, however time limitations force me to use this brute force method
-		 * I do not need to check if there is a possibility for a fork which needs to place a char in the middle position.
-		 * This because if you look closely at the algorithm, if the computer starts it will put his char in the middle
-		 * If the player starts then either that player will put his char in the middle, or he will put it somewhere else which will result in the computer placing a char in the middle
-		 * This means that since a fork needs a minimum of 2 chars for the computer it is impossible to create a fork by placing a char in the middle
-		 * It is however quite possible to create a fork when the computer is already in the middle
-		 * Also when calculating forks we can assume that cases where a win is already possible the program will have taken that win already and that condition cannot be part of the fork
+	/**
+	 * Will do the same as the forkPossible method but will return the coordinates of the space need to be filled to create a fork for the char specified in @param player
+	 * WARNING, should only be run if forkPossible returns true, otherwise will yield incorrect results
+	 * @param player the char for which to calculate the place where it needs to go to create a fork
+	 * @return an int array with the coordinates of the place that needs to be set in order to create a fork where int[0] is the row and int[1] is the column
+	 */
+	private int[] findForkPlace(char player){
+		/**
+		 * This method is also horribly inefficient.
+		 * It is in most perspective the same as the forkPossible method with one mayor difference.
+		 * It will return the position that needs to be filled in order to create the fork
 		 */
-		
-		if(game[0][0]==computer){
-			if (game[2][2]==computer){
+		int temp[] = {0,0};
+		if(game[0][0]==player){
+			if (game[2][2]==player){
 				if (game[0][1]=='A'&&game[0][2]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 2;
+					return temp;
 				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[2][1]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 0;
+					return temp;
 				}
-			}else if (game[1][1]==computer){
+			}else if (game[1][1]==player){
 				if (game[0][1]=='A'&&game[0][2]=='A'&&game[2][1]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 1;
+					return temp;
 				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 1;
+					temp[1] = 0;
+					return temp;
 				}
 			}
-		}else if (game[2][2]==computer){
-			if (game[0][0]==computer){
+		}else if (game[2][2]==player){
+			if (game[0][0]==player){
 				if (game[0][1]=='A'&&game[0][2]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 2;
+					return temp;
 				}else if (game[1][0]=='A'&&game[2][0]=='A'&&game[2][1]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 0;
+					return temp;
 				}
-			}else if (game[1][1]==computer){
+			}else if (game[1][1]==player){
 				if (game[2][1]=='A'&&game[2][0]=='A'&&game[0][1]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 1;
+					return temp;
 				}else if (game[1][2]=='A'&&game[0][2]=='A'&&game[1][0]=='A'){
-					return true;
+					temp[0] = 1;
+					temp[1] = 2;
+					return temp;
 				}
 			}
-		}else if (game[0][2]==computer){
-			if (game[2][0]==computer){
+		}else if (game[0][2]==player){
+			if (game[2][0]==player){
 				if (game[0][1]=='A'&&game[0][0]=='A'&&game[1][0]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 0;
+					return temp;
 				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 2;
+					return temp;
 				}
-			}else if(game[1][1]==computer){
+			}else if(game[1][1]==player){
 				if (game[0][1]=='A'&&game[0][0]=='A'&&game[2][1]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 1;
+					return temp;
 				}else if (game[1][2]=='A'&&game[1][0]=='A'&&game[2][2]=='A'){
-					return true;
+					temp[0] = 1;
+					temp[1] = 2;
+					return temp;
 				}
 			}
-		}else if (game[2][0]==computer){
-			if (game[0][2]==computer){
+		}else if (game[2][0]==player){
+			if (game[0][2]==player){
 				if (game[0][1]=='A'&&game[0][0]=='A'&&game[1][0]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 0;
+					return temp;
 				}else if (game[2][1]=='A'&&game[2][2]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 2;
+					return temp;
 				}
-			}else if(game[1][1]==computer){
+			}else if(game[1][1]==player){
 				if (game[1][0]=='A'&&game[0][0]=='A'&&game[1][2]=='A'){
-					return true;
+					temp[0] = 1;
+					temp[1] = 0;
+					return temp;
 				}else if (game[0][1]=='A'&&game[2][1]=='A'&&game[2][2]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 1;
+					return temp;
 				}
 			}
-		}else if (game[1][1]==computer){
-			if (game[0][1]==computer){
+		}else if (game[1][1]==player){
+			if (game[0][1]==player){
 				if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][2]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 0;
+					return temp;
 				}else if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][0]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 0;
+					return temp;
 				}
-			}else if (game[1][2]==computer){
+			}else if (game[1][2]==player){
 				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 2;
+					return temp;
 				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 2;
+					return temp;
 				}
-			}else if (game[2][1]==computer){
+			}else if (game[2][1]==player){
 				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 2;
+					return temp;
 				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 0;
+					return temp;
 				}
-			}else if (game[1][0]==computer){
+			}else if (game[1][0]==player){
 				if (game[0][0]=='A'&&game[2][0]=='A'&&game[2][2]=='A'){
-					return true;
+					temp[0] = 0;
+					temp[1] = 0;
+					return temp;
 				}else if (game[0][0]=='A'&&game[2][0]=='A'&&game[0][2]=='A'){
-					return true;
+					temp[0] = 2;
+					temp[1] = 0;
+					return temp;
 				}
 			}
 		}
-		//If none of all the possible cases above are true then there is no possibility for a fork and therefore this can return false;
-		return false;
+		return temp;
 	}
 	
 	
