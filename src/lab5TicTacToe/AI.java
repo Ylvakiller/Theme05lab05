@@ -359,8 +359,13 @@ public class AI extends TicTacToe{
 		return 4;
 	}
 	
+	/**
+	 * Enters a move for the computer to place a move in the specified location
+	 * @param row the row in which to place a sign
+	 * @param column the column in which to place a sign
+	 */
 	private void enterMove(int row, int column){
-		game[][]
+		game[row][column] = computer;
 	}
 	
 	
