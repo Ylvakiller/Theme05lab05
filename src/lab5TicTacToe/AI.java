@@ -120,8 +120,15 @@ public class AI extends TicTacToe{
 				coordWin[1] = findWinLeftDiagonal();
 				winFound = true;
 			}else if (rightDiagonalWinPossible(computer)){
-				
+				coordWin[0] = 2-findWinRightDiagonal();
+				coordWin[1] = findWinRightDiagonal();
+				winFound = true;
 			}
+		}
+		//At this point all possible wins for the computer have been checked, if one has been found it should now be entered:
+		
+		if (winFound){
+			
 		}
 		
 	}
@@ -338,7 +345,7 @@ public class AI extends TicTacToe{
 	
 	/**
 	 * Checks for the first empty place in the diagonal from top right to bottom left
-	 * If this is 0 it means 3,1 if it is 1 then it is 2,2 if it is 3 it is 1,3 these values are not the array values
+	 * If this is 0 it means 3,1 if it is 1 then it is 2,2 if it is 2 it is 1,3 these values are not the array values
 	 * @return the integer location of the first empty place in this diagonal
 	 */
 	private int findWinRightDiagonal(){
@@ -352,7 +359,9 @@ public class AI extends TicTacToe{
 		return 4;
 	}
 	
-	
+	private void enterMove(int row, int column){
+		game[][]
+	}
 	
 	
 	

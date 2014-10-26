@@ -197,14 +197,14 @@ public class TicTacToe {
 		int i = 0;
 		while(i<gameSize){
 			if(turn()=='X'){
-				if(game[column][i]=='O'||game[column][i]=='A'){
+				if(game[i][column]=='O'||game[i][column]=='A'){
 					//In this case, it is X his turn and in the column that we check there is a O, meaning that X cannot win with that column
 					//Also if there is an A to be found then that place does not have a sign on it, meaning no win can be gotten here
 					return false;
 				}
 			}
 			if(turn()=='O'){
-				if(game[column][i]=='X'||game[column][i]=='A'){
+				if(game[i][column]=='X'||game[i][column]=='A'){
 					//In this case, it is O his turn and in the column that we check there is a X, meaning that O cannot win with that column
 					//Also if there is an A to be found then that place does not have a sign on it, meaning no win can be gotten here
 					return false;
@@ -225,14 +225,14 @@ public class TicTacToe {
 		int i = 0;
 		while(i<gameSize){
 			if(turn()=='X'){
-				if(game[i][row]=='O'||game[i][row]=='A'){
+				if(game[row][i]=='O'||game[row][i]=='A'){
 					//In this case, it is X his turn and in the row that we check there is a O, meaning that X cannot win with that row
 					//Also if there is an A to be found then that place does not have a sign on it, meaning no win can be gotten here
 					return false;
 				}
 			}
 			if(turn()=='O'){
-				if(game[i][row]=='X'||game[i][row]=='A'){
+				if(game[row][i]=='X'||game[row][i]=='A'){
 					//In this case, it is O his turn and in the row that we check there is a X, meaning that O cannot win with that row
 					//Also if there is an A to be found then that place does not have a sign on it, meaning no win can be gotten here
 					return false;
