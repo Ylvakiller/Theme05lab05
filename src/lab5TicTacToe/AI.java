@@ -51,4 +51,16 @@ public class AI extends TicTacToe{
 	public void gameLoop(){
 		
 	}
+	
+	/**
+	 * Will check if it is the AI it's turn
+	 * @return true if it is the AI turn
+	 */
+	private boolean isAITurn(){
+		if(turn()==computer){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
