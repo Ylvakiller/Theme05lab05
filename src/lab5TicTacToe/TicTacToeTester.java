@@ -63,7 +63,9 @@ public class TicTacToeTester {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TicTacToe game1 = new TicTacToe();
+		System.out.println("I just created a default game, this starts with ");
 		game1.gameLoop();
+		
 	}
 
 }

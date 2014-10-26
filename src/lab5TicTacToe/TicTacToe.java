@@ -440,7 +440,11 @@ public class TicTacToe {
 		while(x<gameSize){
 			System.out.print("| ");
 			while(y<gameSize){
-				System.out.print(game[x][y] +" | ");
+				if(game[x][y]=='A'){
+					System.out.print("  | ");
+				}else{
+					System.out.print(game[x][y] +" | ");
+				}
 				y++;
 			}
 			y=0;
@@ -454,5 +458,6 @@ public class TicTacToe {
 			System.out.println("|");
 		}
 	}
+	
 	
 }
