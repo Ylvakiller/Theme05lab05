@@ -16,5 +16,7 @@ public class AI extends TicTacToe{
 	 */
 	public AI (){
 		gameSize = 3;
+		game = new char[gameSize][gameSize];
+		emptyGame();
 	}
 }

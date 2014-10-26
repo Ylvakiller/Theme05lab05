@@ -158,7 +158,7 @@ public class TicTacToe {
 	 * Will return a true if the game has gone into a draw
 	 * @return true if the game is a draw
 	 */
-	private boolean draw(){
+	protected boolean draw(){
 		if(fullField()){
 			if (leftDiagonalWin()||rightDiagonalWin()){
 				return false;
@@ -302,7 +302,7 @@ public class TicTacToe {
 	 * Retrieves the winner, should only be run when endGame() is true
 	 * @return an 'A' if draw, otherwise an 'X' or 'O'
 	 */
-	private char getWinner(){
+	protected char getWinner(){
 		if(draw()){
 			return 'A';
 		}else{
@@ -314,7 +314,7 @@ public class TicTacToe {
 	 * I ran into problems with the way I initialized the game array,
 	 * Since the array size is usually really small we can just use a simple loop iteration to make the array hold values of 'A'
 	 */
-	private void emptyGame(){
+	protected void emptyGame(){
 		int x = 0, y = 0;
 		while (x<gameSize){
 			while (y<gameSize){
@@ -332,7 +332,7 @@ public class TicTacToe {
 	 * These are send back in a way that they can directly be used in the array
 	 * @return a small int array with 2 coordinates
 	 */
-	private int[] getMove(){
+	protected int[] getMove(){
 		int[] temp = new int[2];
 		boolean temp1 = true;
 		while(temp1){
@@ -421,7 +421,7 @@ public class TicTacToe {
 	 * @param row the row in which to place a sign
 	 * @param column the column in which to place a sign
 	 */
-	private void placeSign(int row, int column){
+	protected void placeSign(int row, int column){
 		game[row][column] = turn();
 	}
 	
@@ -429,7 +429,7 @@ public class TicTacToe {
 	/**
 	 * The proper graphical screen
 	 */
-	private void printScreen(){
+	protected void printScreen(){
 		int temp = 0;
 		while(temp<gameSize){
 			System.out.print("____");
