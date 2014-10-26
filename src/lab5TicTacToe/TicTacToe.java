@@ -337,21 +337,6 @@ public class TicTacToe {
 		boolean temp1 = true;
 		while(temp1){
 			boolean temp2 = true;
-			int tempRow = 0;
-			while(temp2){
-				System.out.println("Please enter the row on which you want to place your sign:");
-				tempRow = keyboard.nextInt()-1;				//minus one to change it to the system arrays use which starts at 0, therefore you can enter 1 for the first row etc
-				if(tempRow>=gameSize){
-					System.out.println("The input you have given is to large, please enter a different number");
-				}else if(tempRow==-1){
-					System.out.println("There is not row number 0, please enter a different number");
-				}else if(tempRow<0){
-					System.out.println("You cannot enter a negative number, please enter a different number");
-				}else{
-					temp2 = false;
-				}
-			}
-			temp2 = true;
 			int tempColumn = 0;
 			while(temp2){
 				System.out.println("Now please enter the column where you want to place your sign:");
@@ -366,6 +351,23 @@ public class TicTacToe {
 					temp2 = false;
 				}
 			}
+
+			temp2 = true;
+			int tempRow = 0;
+			while(temp2){
+				System.out.println("Please enter the row on which you want to place your sign:");
+				tempRow = keyboard.nextInt()-1;				//minus one to change it to the system arrays use which starts at 0, therefore you can enter 1 for the first row etc
+				if(tempRow>=gameSize){
+					System.out.println("The input you have given is to large, please enter a different number");
+				}else if(tempRow==-1){
+					System.out.println("There is not row number 0, please enter a different number");
+				}else if(tempRow<0){
+					System.out.println("You cannot enter a negative number, please enter a different number");
+				}else{
+					temp2 = false;
+				}
+			}
+						
 			if(isEmptyCell(tempRow,tempColumn)){
 				temp[0]=tempRow;
 				temp[1]=tempColumn;
