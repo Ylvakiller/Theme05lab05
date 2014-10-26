@@ -121,7 +121,7 @@ public class TicTacToe {
 	 * returns who's turn it is
 	 * @return the char of the player who's turn it is
 	 */
-	public char turn(){
+	private char turn(){
 		//Bitmasking, we are now only looking at the least significant bit, if that is 0 then it is even, if it is 1 then it is odd
 		if ((moveCount&1)==0){
 			return starter;
@@ -302,7 +302,7 @@ public class TicTacToe {
 	 * Retrieves the winner, should only be run when endGame() is true
 	 * @return an 'A' if draw, otherwise an 'X' or 'O'
 	 */
-	public char getWinner(){
+	private char getWinner(){
 		if(draw()){
 			return 'A';
 		}else{
@@ -332,7 +332,7 @@ public class TicTacToe {
 	 * These are send back in a way that they can directly be used in the array
 	 * @return a small int array with 2 coordinates
 	 */
-	public int[] getMove(){
+	private int[] getMove(){
 		int[] temp = new int[2];
 		boolean temp1 = true;
 		while(temp1){
@@ -438,9 +438,10 @@ public class TicTacToe {
 	 * @param row the row in which to place a sign
 	 * @param column the column in which to place a sign
 	 */
-	public void placeSign(int row, int column){
+	private void placeSign(int row, int column){
 		game[row][column] = turn();
 	}
+	
 	
 	
 	
