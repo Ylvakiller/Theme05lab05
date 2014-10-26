@@ -1,4 +1,7 @@
 package lab5TicTacToe;
+
+import java.util.Scanner;
+
 /**
  * This class will hold all the methods for a console based tic tac toe game, including a game loop
  * @author Ylva
@@ -11,6 +14,10 @@ public class TicTacToe {
 	 */
 	private char[][] game;
 	
+	/**
+	 * Gets the user input.
+	 */
+	static private Scanner keyboard = new Scanner(System.in);
 	/**
 	 * This integer counts the amount of moves, it is started at 0, every even move is a move made by the starting player (where 0 is said to be even)
 	 */
@@ -317,7 +324,36 @@ public class TicTacToe {
 	 */
 	public int[] getTurn(){
 		int[] temp = new int[2];
+		boolean temp1 = true;
+		while(temp1){
+			System.out.println("Please enter the row on which you want to place your sign:");
+			int tempRow = keyboard.nextInt()-1;				//minus one to change it to the system arrays use which starts at 0, therefore you can enter 1 for the first row etc
+			System.out.println("Now please enter the column where you want to place your sign:");
+			int tempColumn = keyboard.nextInt()-1;
+			if(isEmptyCell(tempRow,tempColumn)){
+				temp[0]=tempRow;
+				temp[1]=tempColumn;
+				temp1 = false;
+			}else{
+				System.out.println("There is already a sign at the position you specified");
+				System.out.println("Please enter a different position");
+			}
+		}
 		return temp;
+	}
+	
+	/**
+	 * Will return a true if the cell specified is empty
+	 * @param row the first coordinate in the 2 dimensional playing field
+	 * @param collumn the second coordinate in the 2 dimensional playing field
+	 * @return true if the cell in the 2 dimensional playing field is empty
+	 */
+	private boolean isEmptyCell(int row, int column){
+		if(game[row][column]=='A'){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	
