@@ -666,9 +666,4 @@ public class AI extends TicTacToe{
 		}
 		return temp;
 	}
-	
-	
-	
-	
-	
 }
