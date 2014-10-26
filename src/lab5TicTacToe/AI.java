@@ -22,4 +22,25 @@ public class AI extends TicTacToe{
 		starter = 'X';
 		computer = 'O';
 	}
+	
+	/**
+	 * Constructor that sets which sign the computer should start with
+	 * Sets the board size to 3x3, Sets the starting player to X and the computer to the input
+	 * @param computer the char the computer should have, either X or O
+	 */
+	public AI (char computer){
+		if(computer=='X'||computer=='O'){
+			gameSize = 3;
+			game = new char[gameSize][gameSize];
+			emptyGame();
+			moveCount = 0;
+			starter = 'X';
+			this.computer = computer;
+		}else{
+			//Invalid starting character
+			System.err.println("Invalid character as start player");
+			System.err.println("Error code 1, invalid starting character");
+			System.exit(1);
+		}
+	}
 }
