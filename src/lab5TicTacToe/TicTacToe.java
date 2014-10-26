@@ -294,7 +294,7 @@ public class TicTacToe {
 	 * Retrieves the winner, should only be run when endGame() is true
 	 * @return an 'A' if draw, otherwise an 'X' or 'O'
 	 */
-	public char GetWinner(){
+	public char getWinner(){
 		if(draw()){
 			return 'A';
 		}else{
@@ -383,7 +383,15 @@ public class TicTacToe {
 			placeHolderPrint();
 			int[] temp = getMove();
 			placeSign(temp[0],temp[1]);
+			if(endGame()){
+				if (getWinner()=='A'){
+					System.out.println("The game has ended in a draw.");
+				}else{
+					System.out.println("The player playing with " + getWinner() + " has won this game");
+				}
+			}
 			moveCount++;
+			
 		}
 		
 	}
