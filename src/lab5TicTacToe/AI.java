@@ -87,7 +87,18 @@ public class AI extends TicTacToe{
 	 * This calculates and enters the best move possible
 	 */
 	private void doBestMove(){
+		//step 1, check if it is possible to win, if that is possible, do that
+		//step 2, check if it is possible for the other player to win, if that is possible, do that
+		//step 3, try to make a fork
+		//step 4, if the opponent has the possibility to make a fork go into substeps:
+			//substep 4.1 try to make a 2 in a row to force the opponent into blocking, unless this block means that they can get a fork
+			//substep 4.2 if there is a possibility available where the opponent can fork, block that fork
+		//step 5, try to mark the center
+		//step 6, try to place your character in the opposing corner from the opponent
+		//step 7, try to place your character in a random corner position
+		//step 8, try to place your character on an empty side place
 		
+		//Step 1:
 	}
 	
 	/**
