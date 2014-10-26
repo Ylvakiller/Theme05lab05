@@ -181,4 +181,83 @@ public class AI extends TicTacToe{
 		return false;
 	}
 	
+	/**
+	 * Will check if it is possible for any player to win in the diagonal from top left to bottom right
+	 * @param player
+	 * @return true if the char can win in one move
+	 */
+	private boolean leftDiagonalWinPossible(char player){
+		int i = 0;
+		int countEmpty =0;
+		int countNonPlayer = 0;
+		while(i<gameSize){
+			if(player=='X'){
+				if(game[i][i]=='A'){
+					countEmpty++;
+				}
+				if(game[i][i]=='O'){
+					countNonPlayer++;
+				}
+				
+			}
+			if(player=='O'){
+				if(game[i][i]=='A'){
+					countEmpty++;
+				}
+				if(game[i][i]=='X'){
+					countNonPlayer++;
+				}
+				
+			}
+			i++;
+		}
+		
+		//Now if countEmpty will be 1, then we know that there is only 1 place on a row that is not the player char
+		//If countNonPlayer is larger then 0 we can already see that is is impossible to have a win on this row
+		if(countNonPlayer==0&&countEmpty==1){
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Will check if it is possible for any player to win in the diagonal from top left to bottom right
+	 * @param player the char to check for
+	 * @return true if the char can win in one move
+	 */
+	private boolean rightDiagonalWinPossible(char player){
+		int i = 0;
+		int countEmpty =0;
+		int countNonPlayer = 0;
+		while(i<gameSize){
+			if(player=='X'){
+				if(game[gameSize-i-1][i]=='A'){
+					countEmpty++;
+				}
+				if(game[gameSize-i-1][i]=='O'){
+					countNonPlayer++;
+				}
+				
+			}
+			if(player=='O'){
+				if(game[gameSize-i-1][i]=='A'){
+					countEmpty++;
+				}
+				if(game[gameSize-i-1][i]=='X'){
+					countNonPlayer++;
+				}
+				
+			}
+			i++;
+		}
+		
+		//Now if countEmpty will be 1, then we know that there is only 1 place on a row that is not the player char
+		//If countNonPlayer is larger then 0 we can already see that is is impossible to have a win on this row
+		if(countNonPlayer==0&&countEmpty==1){
+			return true;
+		}
+		return false;
+	}
+	
+	
 }
