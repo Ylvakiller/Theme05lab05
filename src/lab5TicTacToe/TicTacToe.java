@@ -313,6 +313,7 @@ public class TicTacToe {
 				game[x][y] = 'A';
 				y++;
 			}
+			y=0;
 			x++;
 		}
 	}
@@ -320,9 +321,10 @@ public class TicTacToe {
 	/**
 	 * Will return a small array with 2 integer types in it
 	 * These are the coordinates of the place where the user wants to place a sign
+	 * These are send back in a way that they can directly be used in the array
 	 * @return a small int array with 2 coordinates
 	 */
-	public int[] getTurn(){
+	public int[] getMove(){
 		int[] temp = new int[2];
 		boolean temp1 = true;
 		while(temp1){
@@ -345,7 +347,7 @@ public class TicTacToe {
 	/**
 	 * Will return a true if the cell specified is empty
 	 * @param row the first coordinate in the 2 dimensional playing field
-	 * @param collumn the second coordinate in the 2 dimensional playing field
+	 * @param column the second coordinate in the 2 dimensional playing field
 	 * @return true if the cell in the 2 dimensional playing field is empty
 	 */
 	private boolean isEmptyCell(int row, int column){
@@ -366,6 +368,7 @@ public class TicTacToe {
 				System.out.print(game[x][y]);
 				y++;
 			}
+			y=0;
 			x++;
 			System.out.println();
 		}
@@ -376,7 +379,22 @@ public class TicTacToe {
 	 * This method will hold the complete game loop
 	 */
 	public void gameLoop(){
-		placeHolderPrint();
+		while (true){
+			placeHolderPrint();
+			int[] temp = getMove();
+			placeSign(temp[0],temp[1]);
+			moveCount++;
+		}
+		
+	}
+	
+	/**
+	 * Places a sign at the specified place
+	 * @param row the row in which to place a sign
+	 * @param column the column in which to place a sign
+	 */
+	public void placeSign(int row, int column){
+		game[row][column] = turn();
 	}
 	
 	
