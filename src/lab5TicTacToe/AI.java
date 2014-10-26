@@ -483,7 +483,34 @@ public class AI extends TicTacToe{
 					return true;
 				}
 			}
+		}else if (game[1][1]==computer){
+			if (game[0][1]==computer){
+				if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][2]=='A'){
+					return true;
+				}else if (game[0][0]=='A'&&game[0][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}
+			}else if (game[1][2]==computer){
+				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
+					return true;
+				}
+			}else if (game[2][1]==computer){
+				if (game[0][2]=='A'&&game[2][2]=='A'&&game[2][0]=='A'){
+					return true;
+				}else if (game[0][2]=='A'&&game[2][2]=='A'&&game[0][0]=='A'){
+					return true;
+				}
+			}else if (game[1][0]==computer){
+				if (game[0][0]=='A'&&game[2][0]=='A'&&game[2][2]=='A'){
+					return true;
+				}else if (game[0][0]=='A'&&game[2][0]=='A'&&game[0][2]=='A'){
+					return true;
+				}
+			}
 		}
+		//If none of all the possible cases above are true then there is no possibility for a fork and therefore this can return false;
 		return false;
 	}
 	
