@@ -12,21 +12,21 @@ public class TicTacToe {
 	 * This character array will hold the game field, it will be the size of the game
 	 * A value can be either 'A'(empty) 'O'(player sign) or 'X'(other player sign)
 	 */
-	private char[][] game;
+	protected char[][] game;
 	
 	/**
 	 * Gets the user input.
 	 */
-	static private Scanner keyboard = new Scanner(System.in);
+	static protected Scanner keyboard = new Scanner(System.in);
 	/**
 	 * This integer counts the amount of moves, it is started at 0, every even move is a move made by the starting player (where 0 is said to be even)
 	 */
-	private int moveCount;
+	protected int moveCount;
 	
 	/**
 	 * This char is either X or O depending on which user starts
 	 */
-	private char starter;
+	protected char starter;
 	
 	/**
 	 * The size of the board
@@ -36,7 +36,7 @@ public class TicTacToe {
 	 * This actually results in a penalty in terms of actual computing time.
 	 * More on this subject can be found at http://stackoverflow.com/questions/14531235/in-java-is-it-more-efficient-to-use-byte-or-short-instead-of-int-and-float-inst
 	 */
-	private int gameSize;
+	protected int gameSize;
 	
 	/**
 	 * Default constructor,
