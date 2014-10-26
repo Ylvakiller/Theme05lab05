@@ -128,6 +128,45 @@ public class AI extends TicTacToe{
 		//At this point all possible wins for the computer have been checked, if one has been found it should now be entered:
 		
 		if (winFound){
+			enterMove(coordWin[0], coordWin[1]);
+		}else{
+			//Here step 2 should be
+			char player;
+			if (computer == 'X'){
+				player = 'O';
+			}else{
+				player = 'X';
+			}
+			while(i<gameSize){
+				if(columnWinPossible(i,player)){
+					coordWin[0] = i;
+					coordWin[1] = findWinColumn(i);
+					winFound = true;
+				}else if (rowWinPossible(i,player)){
+					coordWin[0] = findWinRow(i);
+					coordWin[1] = i;
+					winFound = true;
+				}
+				i++;
+			}
+			if (!winFound){
+				if (leftDiagonalWinPossible(player)){
+					coordWin[0] = findWinLeftDiagonal();
+					coordWin[1] = findWinLeftDiagonal();
+					winFound = true;
+				}else if (rightDiagonalWinPossible(player)){
+					coordWin[0] = findWinRightDiagonal();
+					coordWin[1] = 2-findWinRightDiagonal();
+					winFound = true;
+				}
+			}
+			//Here winFound is true if the opposing player can win.
+			//If the opposing player can win then the coordWin is the place that needs to be blocked
+			if (winFound){
+				enterMove(coordWin[0],coordWin[1]);
+			}else{
+				//This is where step 3 should be
+			}
 			
 		}
 		
