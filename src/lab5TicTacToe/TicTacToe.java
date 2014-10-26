@@ -372,6 +372,13 @@ public class TicTacToe {
 		
 	}
 	
+	/**
+	 * This method will hold the complete game loop
+	 */
+	public void gameLoop(){
+		placeHolderPrint();
+	}
+	
 	
 	
 }
