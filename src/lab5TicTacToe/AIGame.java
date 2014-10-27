@@ -35,7 +35,15 @@ public class AIGame {
 			computer='O';
 		}
 		AI game = new AI(computer);
+		System.out.println("Now the game has an ultra hard mode, if you want to play against this please enter a y");
+		String modeSelection = keyboard.next();
+		if (modeSelection.compareToIgnoreCase("Y")==0){
+			game.ultraHardMode = true;
+		}else{
+			game.ultraHardMode = false;
+		}
 		game.gameLoop();
+		
 		System.out.println("Whoop die freaking doo");
 		keyboard.close();
 	}

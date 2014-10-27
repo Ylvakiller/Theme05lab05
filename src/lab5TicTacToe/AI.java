@@ -11,6 +11,8 @@ public class AI extends TicTacToe{
 	 */
 	private char computer;
 	
+	protected boolean ultraHardMode;
+	
 	/**
 	 * Default constructor, sets board size to 3, sets the starting player to X and the computer to play with 0
 	 */
@@ -127,7 +129,7 @@ public class AI extends TicTacToe{
 				winFound = true;
 			}else if (rightDiagonalWinPossible(computer)){
 				coordWin[0] = findWinRightDiagonal();
-				coordWin[1] = 2-findWinRightDiagonal();
+				coordWin[1] = findWinRightDiagonal();
 				winFound = true;
 			}
 		}
@@ -185,30 +187,51 @@ public class AI extends TicTacToe{
 					enterMove(temp[0],temp[1]);
 					System.out.println("Step 3");
 				}else{
-					boolean step4 = true;
-					if (computer=='O'){
-						if (forkPossible('X')){
-							int temp[] = findForkPlace('X');
-							System.out.println("Step 4");
-							enterMove(temp[0],temp[1]);
-						}else{
-							step4 = false;
-						}
-					}else{
-						if (forkPossible('O')){
-							int temp[] = findForkPlace('O');
-							System.out.println("Step 4");
-							enterMove(temp[0],temp[1]);
-						}else{
-							step4 = true;
+					boolean ultraHardStep = false;
+					//step ultraHardStep force the opponent to block (IE make 2 in a row)
+					//This step will be the ultraHardMode
+					if(ultraHardMode){
+						if (checkForCreateBlockAgainstFork()){
+							if(game[1][0]=='A'){
+								ultraHardStep = true;
+								enterMove(1,0);
+							}else if(game[1][2]=='A'){
+								ultraHardStep = true;
+								enterMove(1,2);
+							}else if(game[2][1]=='A'){
+								ultraHardStep = true;
+								enterMove(2,1);
+							}else if(game[0][1]=='A'){
+								ultraHardStep = true;
+								enterMove(0,1);
+							}
 						}
 					}
 					
-					if (!step4){
-						//step 4.2 force the opponent to block (IE make 2 in a row)
-						//This step will come later if there is time.
-						boolean step45 = true;
-						if (step45){
+					if (!ultraHardStep){
+						
+						boolean step4 = true;
+						if (computer=='O'){
+							if (forkPossible('X')){
+								int temp[] = findForkPlace('X');
+								System.out.println("Step 4");
+								enterMove(temp[0],temp[1]);
+							}else{
+								step4 = false;
+							}
+						}else{
+							if (forkPossible('O')){
+								int temp[] = findForkPlace('O');
+								System.out.println("Step 4");
+								enterMove(temp[0],temp[1]);
+							}else{
+								step4 = true;
+							}
+						}
+
+						if (!step4){
+							
+
 							//step 5
 							if (game[1][1]=='A'){
 								System.out.println("Step 5");
@@ -750,4 +773,24 @@ public class AI extends TicTacToe{
 		return temp;
 	}
 	
+	/**
+	 * This will check if there is a way for the opponent to create a fork and block that fork
+	 * for example, if the player holds a corner, the computer holds the center and the player holds the opposing corner then,
+	 * The computer should not play a corner but instead play a middle section
+	 * @return a true if there is a case in which the computer should stop the opponent from creating a fork by blocking
+	 */
+	private boolean checkForCreateBlockAgainstFork(){
+		char player;
+		if(computer=='X'){
+			player = 'O';
+		}else{
+			player = 'X';
+		}
+		if (game[0][0]==player&&game[2][2]==player&&game[1][1]==computer){
+			return true;
+		}else if (game[2][0]==player&&game[0][2]==player&&game[1][1]==computer){
+			return true;
+		}
+		return false;
+	}
 }
