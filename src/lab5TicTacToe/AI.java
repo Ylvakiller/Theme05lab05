@@ -34,7 +34,11 @@ public class AI extends TicTacToe{
 			game = new char[gameSize][gameSize];
 			emptyGame();
 			moveCount = 0;
-			starter = 'X';
+			if(computer=='X'){
+				starter = 'O';
+			}else{
+				starter = 'X';
+			}
 			this.computer = computer;
 		}else{
 			//Invalid starting character
