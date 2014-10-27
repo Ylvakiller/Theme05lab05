@@ -26,6 +26,7 @@ Then the program will attempt to create a fork.
  
  
  In this case there is a possibility to fork by doing the following move:
+ 
 	X-X
 	
 	-O-
