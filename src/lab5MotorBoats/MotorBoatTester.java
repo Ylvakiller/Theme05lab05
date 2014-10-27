@@ -137,6 +137,81 @@ public class MotorBoatTester {
 				System.out.println("Neither is going faster as the other, this is what we want.");
 			}
 		}
+		
+		System.out.println();
+		System.out.println("Now if we where to lower the top speed of the second boar then the speed it is going should also decrease, lets check that");
+		System.out.println("Before");
+		System.out.println("The maximum speed is: " + second.getMaxSpeed() + " kmph");
+		System.out.println("The MotorBoat is going: " + second.getCurrentSpeed() + " kmph");
+		second.setMaxSpeed(second.getMaxSpeed()-5);
+		System.out.println("After");
+		System.out.println("The maximum speed is: " + second.getMaxSpeed() + " kmph");
+		System.out.println("The MotorBoat is going: " + second.getCurrentSpeed() + " kmph");
+		
+		System.out.println("Sweet that works aswell, things are going great!");
+		System.out.println();
+		System.out.println("But now the boats are not equal right? lets check that.");
+		if (MotorBoat.equals(first, second)){
+			System.err.println("Hey it thinks they are equal? that is not correct");
+		}else{
+			System.out.println("Jup they are different, It is looking good for this program.");
+		}
+		
+		System.out.println();
+		System.out.println("But since the top speed is now different between the boats we can compare those and find out which one can go faster");
+		if (MotorBoat.compareMaxSpeed(first, second)){
+			System.out.println("Okay so the first one can go faster then the second one... seems about right");
+		}else{
+			if (MotorBoat.compareMaxSpeed(second, first)){
+				System.err.println("Wait, the second boat can go faster? This is not right");
+			}else{
+				System.err.println("They both can go the same speed, that is not correct!!");
+			}
+		}
+		
+		System.out.println("Okay so that works, what about the currentSpeed?");
+		if (MotorBoat.compareCurrentSpeed(first, second)){
+			System.out.println("The first one is going faster? jup that is correct");
+		}else{
+			if (MotorBoat.compareCurrentSpeed(second, first)){
+				System.err.println("Wait, the second boat is going faster? This is not right");
+			}else{
+				System.err.println("They both are going the same speed, that is not correct!!");
+			}
+		}
+		System.out.println("");
+		System.out.println("I think we now have tested nearly all the different cases.");
+		System.out.println("But for completion I will set the current speed of the first motorboat to 5 kmph");
+		System.out.println("This means that the first motorboat can go faster, but is not currentely going faster");
+		System.out.println("Now we can run the same checks as just before:");
+		System.out.println();
+		
+		first.setCurrentSpeed(5);
+		System.out.println("Comparing top speed");
+		if (MotorBoat.compareMaxSpeed(first, second)){
+			System.out.println("Okay so the first one can go faster then the second one... seems about right");
+		}else{
+			if (MotorBoat.compareMaxSpeed(second, first)){
+				System.err.println("Wait, the second boat can go faster? This is not right");
+			}else{
+				System.err.println("They both can go the same speed, that is not correct!!");
+			}
+		}
+		
+		System.out.println("And comparing the current speed");
+		if (MotorBoat.compareCurrentSpeed(first, second)){
+			System.err.println("The first one is going faster? Hey that is not right!");
+		}else{
+			if (MotorBoat.compareCurrentSpeed(second, first)){
+				System.out.println("So the second boat is going faster, sweeet");
+			}else{
+				System.err.println("They both are going the same speed, that is not correct!!");
+			}
+		}
+		
+		System.out.println();
+		System.out.println("I think I have checked all the cases now.");
+		System.out.println("And based on the results of these cases I would say that the MotorBoat class is working perfectely");
+		
 	}
-
 }

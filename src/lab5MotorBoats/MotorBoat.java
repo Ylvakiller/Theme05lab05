@@ -250,10 +250,4 @@ public class MotorBoat {
 		}
 	}
 	
-	/**
-	 * Sets the current speed to the maximum speed this boat can have
-	 */
-	public void gotoMax(){
-		currentSpeed = maxSpeed;
-	}
 }
