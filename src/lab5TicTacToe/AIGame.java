@@ -14,19 +14,28 @@ public class AIGame {
 		System.out.println("If you want to start, enter an X, if you want the computer to start enter an O");
 		Scanner keyboard = new Scanner(System.in);
 		boolean input =true;
+		String player = null;
 		while(input){
-			String player = keyboard.next();
+			player = keyboard.next();
 			while (player.length()!=1){
 				System.err.println("The input that you have given is to long, please try again");
 				player = keyboard.next();
 			}
-			if(player=="X"||player=="O"){
+			if(player.compareTo("X")==0||player.compareTo("O")==0){
 				input = false;
 			}else{
 				System.err.println("The input that you have given is neither X or O. Keep in mind that this is case sensitive");
 				System.out.println("Please try again:");
 			}
 		}
+		char computer;
+		if(player=="O"){
+			computer='X';
+		}else{
+			computer='O';
+		}
+		AI game = new AI(computer);
+		game.gameLoop();
 		System.out.println("Whoop die freaking doo");
 		keyboard.close();
 	}
