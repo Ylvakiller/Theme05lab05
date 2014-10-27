@@ -136,7 +136,6 @@ public class AI extends TicTacToe{
 		//At this point all possible wins for the computer have been checked, if one has been found it should now be entered:
 		
 		if (winFound){
-			System.out.println("Step 1");
 			enterMove(coordWin[0], coordWin[1]);
 		}else{
 			//Here step 2 should be
@@ -149,13 +148,10 @@ public class AI extends TicTacToe{
 			i = 0;
 			while(i<gameSize){
 				if(columnWinPossible(i,player)){
-					System.out.println("Column win is possible");
 					coordWin[0] = findWinColumn(i);
 					coordWin[1] = i;
 					winFound = true;
 				}else if (rowWinPossible(i,player)){
-
-					System.out.println("row win is possible");
 					coordWin[0] = i;
 					coordWin[1] = findWinRow(i);;
 					winFound = true;
@@ -164,12 +160,10 @@ public class AI extends TicTacToe{
 			}
 			if (!winFound){
 				if (leftDiagonalWinPossible(player)){
-					System.out.println("leftDiagonal win is possible");
 					coordWin[0] = findWinLeftDiagonal();
 					coordWin[1] = findWinLeftDiagonal();
 					winFound = true;
 				}else if (rightDiagonalWinPossible(player)){
-					System.out.println("rightDiagonal win is possible");
 					coordWin[0] = 2-findWinRightDiagonal();
 					coordWin[1] = findWinRightDiagonal();
 					winFound = true;
@@ -178,14 +172,12 @@ public class AI extends TicTacToe{
 			//Here winFound is true if the opposing player can win.
 			//If the opposing player can win then the coordWin is the place that needs to be blocked
 			if (winFound){
-				System.out.println("Step 2");
 				enterMove(coordWin[0],coordWin[1]);
 			}else{
 				//This is where step 3 should be
 				if (forkPossible(computer)){
 					int temp[] = findForkPlace(computer);
 					enterMove(temp[0],temp[1]);
-					System.out.println("Step 3");
 				}else{
 					boolean ultraHardStep = false;
 					//step ultraHardStep force the opponent to block (IE make 2 in a row)
@@ -214,7 +206,6 @@ public class AI extends TicTacToe{
 						if (computer=='O'){
 							if (forkPossible('X')){
 								int temp[] = findForkPlace('X');
-								System.out.println("Step 4");
 								enterMove(temp[0],temp[1]);
 							}else{
 								step4 = false;
@@ -222,7 +213,6 @@ public class AI extends TicTacToe{
 						}else{
 							if (forkPossible('O')){
 								int temp[] = findForkPlace('O');
-								System.out.println("Step 4");
 								enterMove(temp[0],temp[1]);
 							}else{
 								step4 = true;
@@ -230,14 +220,10 @@ public class AI extends TicTacToe{
 						}
 
 						if (!step4){
-							
-
 							//step 5
 							if (game[1][1]=='A'){
-								System.out.println("Step 5");
 								enterMove(1,1);
 							}else{
-								System.out.println("step 6");
 								//step 6
 								if (game[0][0]==player&&game[2][2]=='A'){
 									enterMove(2,2);
@@ -248,7 +234,6 @@ public class AI extends TicTacToe{
 								}else if (game[2][0]==player&&game[0][2]=='A'){
 									enterMove(0,2);
 								}else{
-									System.out.println("Step 7");
 									//step 7
 									if (game[0][0]=='A'){
 										enterMove(0,0);
@@ -259,7 +244,6 @@ public class AI extends TicTacToe{
 									}else if (game[2][0]=='A'){
 										enterMove(2,0);
 									}else{
-										System.out.println("Step 8");
 										//step 8
 										if (game[1][0]=='A'){
 											enterMove(1,0);
@@ -313,9 +297,6 @@ public class AI extends TicTacToe{
 			}
 			i++;
 		}
-		System.out.println("Row" + row);
-		System.out.println("countNonPlayer:" + countNonPlayer);
-		System.out.println("countEmpty:" + countEmpty);
 		//Now if countEmpty will be 1, then we know that there is only 1 place on a row that is not the player char
 		//If countNonPlayer is larger then 0 we can already see that is is impossible to have a win on this row
 		if(countNonPlayer==0&&countEmpty==1){
