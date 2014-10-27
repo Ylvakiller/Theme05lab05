@@ -170,7 +170,67 @@ public class AI extends TicTacToe{
 					int temp[] = findForkPlace(computer);
 					enterMove(temp[0],temp[1]);
 				}else{
-					//This is step 4
+					boolean step4 = true;
+					if (computer=='O'){
+						if (forkPossible('X')){
+							int temp[] = findForkPlace('X');
+							enterMove(temp[0],temp[1]);
+						}else{
+							step4 = false;
+						}
+					}else{
+						if (forkPossible('O')){
+							int temp[] = findForkPlace('O');
+							enterMove(temp[0],temp[1]);
+						}else{
+							step4 = true;
+						}
+					}
+					
+					if (!step4){
+						//step 4.2 force the opponent to block (IE make 2 in a row)
+						//This step will come later if there is time.
+						boolean step45 = true;
+						if (step45){
+							//step 5
+							if (game[1][1]=='A'){
+								enterMove(1,1);
+							}else{
+								//step 6
+								if (game[0][0]==player&&game[2][2]=='A'){
+									enterMove(2,2);
+								}else if (game[2][2]==player&&game[0][0]=='A'){
+									enterMove(0,0);
+								}else if (game[0][2]==player&&game[2][0]=='A'){
+									enterMove(2,0);
+								}else if (game[2][0]==player&&game[0][2]=='A'){
+									enterMove(0,2);
+								}else{
+									//step 7
+									if (game[0][0]=='A'){
+										enterMove(0,0);
+									}else if (game[2][2]=='A'){
+										enterMove(2,2);
+									}else if (game[0][2]=='A'){
+										enterMove(0,2);
+									}else if (game[2][0]=='A'){
+										enterMove(2,0);
+									}else{
+										//step 8
+										if (game[1][0]=='A'){
+											enterMove(1,0);
+										}else if (game[0][1]=='A'){
+											enterMove(0,1);
+										}else if (game[1][2]=='A'){
+											enterMove(1,2);
+										}else if (game[2][1]=='A'){
+											enterMove(2,1);
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			
@@ -666,4 +726,5 @@ public class AI extends TicTacToe{
 		}
 		return temp;
 	}
+	
 }
