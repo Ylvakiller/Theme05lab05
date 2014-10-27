@@ -1,4 +1,6 @@
 package lab5TicTacToe;
+
+import java.util.Scanner;
 /*
  * Description as found on blackboard:
  * 
@@ -61,7 +63,8 @@ package lab5TicTacToe;
 public class TicTacToeTester {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Scanner keyboard = new Scanner(System.in);
 		TicTacToe game1 = new TicTacToe();
 		System.out.println("I just created a default game, this starts with an empty 4x4 grid with the player X starting.");
 		System.out.println("Now Let us check which user its turn it is:");
@@ -74,9 +77,17 @@ public class TicTacToeTester {
 		System.out.println("So that works aswell");
 		System.out.println("Now there are 2 more tests that need to be done, these will be tested in the gameLoop");
 		System.out.println();
+		System.out.println("Let me first ask the size of the board that you want to play on:");
+		byte size = keyboard.nextByte();
+		while (size<=2){
+			System.out.println("Your board size is to small");
+			System.out.println("Please enter a board size larger then 3");
+			size = keyboard.nextByte();
+		}
+		TicTacToe game3 = new TicTacToe(size);
 		System.out.println("Starting game loop");
-		game1.gameLoop();
-		
+		game3.gameLoop();
+		keyboard.close();
 	}
 
 }
