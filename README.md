@@ -15,7 +15,9 @@ Then the program will attempt to create a fork.
   A fork is a postion in which there are 2 places for the computer to win
   e.g. if the computer is X:
 	X--
+	
 	-O-
+	
 	--X
  
  In this case there is a possibility to fork by doing the following move:
