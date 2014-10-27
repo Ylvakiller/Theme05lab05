@@ -16,6 +16,7 @@ Then the program will attempt to create a fork.
   e.g. if the computer is X:
   ____________
  | X |   |   | 
+ 
  |___|___|___|
  |   | O |   | 
  |___|___|___|
