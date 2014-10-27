@@ -66,6 +66,7 @@ public class AI extends TicTacToe{
 				}else{
 					System.out.println("You have beaten the computer");
 				}
+				System.exit(0);
 			}
 			moveCount++;
 		}
